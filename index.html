@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Blood in Shadowdale · Interactive Map</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div><small>Forgotten Realms · Campaign Atlas</small>
+            <h1>Blood in Shadowdale</h1>
+        </div>
+        <div class="toolbar"><button class="btn" id="fitBtn">Fit map</button><span class="editor-only hide"
+                id="saveStatus">Local DM editor</span><button class="btn gold hide" id="addBtn">+ Add
+                location</button><button class="btn hide" id="exportBtn">Export locations</button><button
+                class="btn hide" id="importBtn">Import locations</button><input type="file" id="importFile"
+                accept="application/json,.json" hidden></div>
+    </header>
+    <main id="stage">
+        <div id="canvas"><img id="land" alt="Full Shadowdale map" draggable="false">
+            <div id="pins"></div>
+        </div>
+        <aside class="panel">
+            <h2>Locations <span id="count"></span></h2><input id="filter" placeholder="Search locations…"
+                aria-label="Search locations">
+            <div id="list"></div>
+            <p class="note" id="panelTip">The whole map is yours to explore. Locations appear when the DM publishes
+                them.</p>
+        </aside>
+        <div class="controls"><button class="btn" id="plus" title="Zoom in">+</button><button class="btn" id="minus"
+                title="Zoom out">−</button></div>
+        <div class="bottom" id="hint">Drag to pan · Scroll to zoom · Click a numbered circle to open its story</div>
+    </main>
+    <div id="shade">
+        <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
