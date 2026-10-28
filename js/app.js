@@ -1,43 +1,139 @@
 
-const MAP_DATA = "assets/shadowdale-map.png";
+// Blood in Shadowdale — Interactive Map
+// Supports Map Locations, Murder Locations, and Session Records.
+// Existing locations without a type are treated as Map Locations.
 
-const ICONS = {};
-for (let n = 1; n <= 60; n++) {
-  ICONS[n] = `assets/markers/${String(n).padStart(2, "0")}.png`;
-}
+const MAP_IMAGE = "assets/shadowdale-map.png";
 
-const $ = id => document.getElementById(id);
+const MARKER_IMAGE = {
+  murder: "assets/markers/murder.png",
+  session: "assets/markers/session.png"
+};
+
+const MAP_WIDTH = 1447;
+const MAP_HEIGHT = 1087;
+const IS_EDITOR = window.__SHADOWDALE_EDITOR__ === true;
+
+const $ = (id) => document.getElementById(id);
+
 const stage = $("stage");
 const canvas = $("canvas");
 const pins = $("pins");
 
-$("land").src = MAP_DATA;
-
-const W = 1447;
-const H = 1087;
-const IS_EDITOR = window.__SHADOWDALE_EDITOR__ === true;
+$("land").src = MAP_IMAGE;
 
 let locations = [];
-let dm = IS_EDITOR;
 let placing = false;
+let placingSpot = { u: 0.5, v: 0.5 };
 let scale = 1;
 let x = 0;
 let y = 0;
 let drag = null;
 let dragged = false;
-let placingSpot = { u: 0.5, v: 0.5 };
 
-function escapeHTML(s) {
-  return String(s ?? "").replace(/[&<>"']/g, c => ({
+// LOCATION TYPES
+
+function locationType(location) {
+  return ["map", "murder", "session"].includes(location.type)
+    ? location.type
+    : "map";
+}
+
+function markerImage(location) {
+  const type = locationType(location);
+
+  if (type !== "map") {
+    return MARKER_IMAGE[type];
+  }
+
+  return `assets/markers/${String(location.number).padStart(2, "0")}.png`;
+}
+
+function typeName(type) {
+  return {
+    map: "Map Location",
+    murder: "Murder Location",
+    session: "Session Record"
+  }[type];
+}
+
+function locationLabel(location) {
+  const type = locationType(location);
+
+  if (type === "map") {
+    return `#${location.number} · ${location.title}`;
+  }
+
+  return `${type === "murder" ? "✕ Murder" : "▤ Session"} · ${location.title}`;
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
     "<": "&lt;",
     ">": "&gt;",
     '"': "&quot;",
     "'": "&#39;"
-  }[c]));
+  })[char]);
 }
 
-// LOAD AND SAVE LOCATIONS
+// VALIDATE IMPORTED LOCATIONS
+
+function normalizedImport(item) {
+  if (!item || typeof item !== "object") {
+    throw Error("Invalid location entry.");
+  }
+
+  const type = locationType(item);
+
+  const result = {
+    id: item.id,
+    type,
+    title: item.title,
+    description: String(item.description ?? ""),
+    photo: String(item.photo ?? ""),
+    u: item.u,
+    v: item.v
+  };
+
+  if (type === "map") {
+    result.number = item.number;
+  }
+
+  if (
+    typeof result.id !== "string" ||
+    !result.id ||
+    typeof result.title !== "string" ||
+    !result.title.trim() ||
+    !Number.isFinite(result.u) ||
+    result.u < 0 ||
+    result.u > 1 ||
+    !Number.isFinite(result.v) ||
+    result.v < 0 ||
+    result.v > 1 ||
+    (
+      type === "map" &&
+      (
+        !Number.isInteger(result.number) ||
+        result.number < 1 ||
+        result.number > 60
+      )
+    )
+  ) {
+    throw Error("Invalid location fields.");
+  }
+
+  if (
+    item.type !== undefined &&
+    !["map", "murder", "session"].includes(item.type)
+  ) {
+    throw Error("Unknown location type.");
+  }
+
+  return result;
+}
+
+// LOAD LOCATIONS
 
 async function loadLocations() {
   try {
@@ -49,28 +145,33 @@ async function loadLocations() {
       throw Error("Cannot load locations.json");
     }
 
-    const content = await response.json();
-    const data = Array.isArray(content)
-      ? content
-      : content.locations;
+    const data = await response.json();
 
-    if (!Array.isArray(data)) {
+    const entries = Array.isArray(data)
+      ? data
+      : data.locations;
+
+    if (!Array.isArray(entries)) {
       throw Error("Invalid locations.json format");
     }
 
-    locations = data;
+    locations = entries.map(normalizedImport);
+
     render();
 
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
+
     $("panelTip").textContent =
-      "Unable to load locations.json: " + err.message;
+      `Unable to load locations.json: ${error.message}`;
   }
 }
 
-async function save() {
+// SAVE LOCATIONS
+
+async function saveLocations() {
   if (!IS_EDITOR) {
-    throw Error("Read-only player site");
+    throw Error("This is the read-only player website.");
   }
 
   const response = await fetch("/api/locations", {
@@ -82,29 +183,26 @@ async function save() {
   });
 
   if (!response.ok) {
-    const msg = await response.text();
-    throw Error(msg || "Save failed");
+    throw Error(await response.text() || "Save failed");
   }
-
-  return await response.json();
 }
 
-async function commitChange(before) {
+async function commitChange(previous) {
   try {
-    await save();
+    await saveLocations();
+
     render();
     closeModal();
-    setSaveStatus("Saved directly to locations.json ✓");
 
-  } catch (err) {
-    locations = before;
+    $("saveStatus").textContent =
+      "Saved to locations.json ✓";
+
+  } catch (error) {
+    locations = previous;
     render();
-    alert("Changes were not saved: " + err.message);
-  }
-}
 
-function setSaveStatus(message) {
-  $("saveStatus").textContent = message;
+    alert(`Changes were not saved: ${error.message}`);
+  }
 }
 
 // MAP NAVIGATION
@@ -114,41 +212,42 @@ function transform() {
     `translate(${x}px, ${y}px) scale(${scale})`;
 }
 
-function fit() {
+function fitMap() {
   const rect = stage.getBoundingClientRect();
 
   scale = Math.min(
-    rect.width / W,
-    rect.height / H
+    rect.width / MAP_WIDTH,
+    rect.height / MAP_HEIGHT
   ) * 0.97;
 
-  x = (rect.width - W * scale) / 2;
-  y = (rect.height - H * scale) / 2;
+  x = (rect.width - MAP_WIDTH * scale) / 2;
+  y = (rect.height - MAP_HEIGHT * scale) / 2;
 
   transform();
 }
 
 function zoom(
-  mult,
-  cx = stage.clientWidth / 2,
-  cy = stage.clientHeight / 2
+  multiplier,
+  centerX = stage.clientWidth / 2,
+  centerY = stage.clientHeight / 2
 ) {
-  const s = Math.max(
+  const next = Math.max(
     0.16,
-    Math.min(10, scale * mult)
+    Math.min(10, scale * multiplier)
   );
 
-  x = cx - (cx - x) * s / scale;
-  y = cy - (cy - y) * s / scale;
-  scale = s;
+  x = centerX - (centerX - x) * (next / scale);
+  y = centerY - (centerY - y) * (next / scale);
+
+  scale = next;
 
   transform();
 }
 
-// MODAL MANAGEMENT
+// MODAL CONTROLS
 
-function modal(content) {
-  $("modal").innerHTML = content;
+function showModal(html) {
+  $("modal").innerHTML = html;
   $("shade").classList.add("show");
 }
 
@@ -157,110 +256,163 @@ function closeModal() {
   $("modal").innerHTML = "";
 }
 
-// Make the function available to HTML buttons.
-window.closeModal = closeModal;
-
-// Close when clicking outside the modal.
-$("shade").addEventListener("click", e => {
-  if (e.target === $("shade")) {
+// Clicking outside closes modal.
+$("shade").addEventListener("click", (event) => {
+  if (event.target === $("shade")) {
     closeModal();
   }
 });
 
-// Close with Escape.
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") {
+// X, Cancel, and Close buttons.
+$("modal").addEventListener("click", (event) => {
+  if (event.target.closest("[data-close]")) {
+    closeModal();
+  }
+});
+
+// Escape key.
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
     closeModal();
   }
 });
 
 // VIEW LOCATION
 
-function openLoc(id) {
-  const p = locations.find(a => a.id === id);
-  if (!p) return;
+function openLocation(id) {
+  const location = locations.find(
+    (item) => item.id === id
+  );
 
-  modal(`
+  if (!location) return;
+
+  const type = locationType(location);
+
+  const tag = type === "map"
+    ? `MAP LOCATION #${location.number}`
+    : typeName(type).toUpperCase();
+
+  showModal(`
     <div class="headrow">
       <div>
-        <div class="tag">LOCATION #${p.number}</div>
-        <h2>${escapeHTML(p.title)}</h2>
+        <div class="tag">${tag}</div>
+        <h2>${escapeHTML(location.title)}</h2>
       </div>
-      <button class="x" onclick="closeModal()">×</button>
+
+      <button
+        class="x"
+        type="button"
+        data-close
+        aria-label="Close"
+      >×</button>
     </div>
 
-    ${p.photo ? `
-      <img
-        class="feature"
-        src="${escapeHTML(p.photo)}"
-        alt="Location illustration"
-      >
-    ` : ""}
+    ${
+      location.photo
+        ? `<img
+             class="feature"
+             src="${escapeHTML(location.photo)}"
+             alt="Location illustration"
+           >`
+        : ""
+    }
 
     <p>
-      ${escapeHTML(p.description) ||
-        '<span class="empty">No description yet.</span>'}
+      ${
+        escapeHTML(location.description) ||
+        '<span class="empty">No description yet.</span>'
+      }
     </p>
 
     <div class="modal-foot">
-      ${dm ? `
-        <button
-          class="btn gold"
-          onclick="editLoc('${p.id}')"
-        >
-          Edit location
-        </button>
-      ` : ""}
+      ${
+        IS_EDITOR
+          ? `<button
+               class="btn gold"
+               type="button"
+               id="editView"
+             >Edit location</button>`
+          : ""
+      }
 
       <button
         class="btn"
-        onclick="closeModal()"
-      >
-        Close
-      </button>
+        type="button"
+        data-close
+      >Close</button>
     </div>
   `);
+
+  if (IS_EDITOR) {
+    $("editView").addEventListener(
+      "click",
+      () => editLocation(location.id)
+    );
+  }
 }
 
-// RENDER MAP MARKERS AND LOCATION LIST
+// RENDER MARKERS AND LOCATION LIST
 
 function render() {
   pins.replaceChildren();
 
-  const query = $("filter").value.toLowerCase();
   const list = $("list");
-
   list.replaceChildren();
 
-  const sorted = [...locations].sort(
-    (a, b) => a.number - b.number
-  );
+  const query = $("filter").value.toLowerCase().trim();
 
-  for (const p of sorted) {
-    const b = document.createElement("button");
+  const order = {
+    map: 0,
+    murder: 1,
+    session: 2
+  };
 
-    b.className = "pin";
-    b.style.left = (p.u * 100) + "%";
-    b.style.top = (p.v * 100) + "%";
-    b.title = `#${p.number} ${p.title}`;
-    b.setAttribute("aria-label", b.title);
+  const sorted = [...locations].sort((a, b) => {
+    const difference =
+      order[locationType(a)] - order[locationType(b)];
 
-    const im = document.createElement("img");
+    if (difference) return difference;
 
-    im.src = ICONS[p.number] || ICONS[1];
-    im.alt = String(p.number);
+    if (locationType(a) === "map") {
+      return a.number - b.number;
+    }
 
-    b.append(im);
+    return a.title.localeCompare(b.title);
+  });
 
-    b.onclick = e => {
-      e.stopPropagation();
-      openLoc(p.id);
-    };
+  for (const location of sorted) {
+    const marker = document.createElement("button");
 
-    pins.appendChild(b);
+    marker.type = "button";
+    marker.className = "pin";
+
+    marker.style.left = `${location.u * 100}%`;
+    marker.style.top = `${location.v * 100}%`;
+
+    marker.title = locationLabel(location);
+
+    marker.setAttribute(
+      "aria-label",
+      marker.title
+    );
+
+    const image = document.createElement("img");
+
+    image.src = markerImage(location);
+    image.alt = "";
+
+    marker.append(image);
+
+    marker.addEventListener("click", (event) => {
+      event.stopPropagation();
+      openLocation(location.id);
+    });
+
+    pins.append(marker);
 
     const searchText =
-      `${p.number} ${p.title} ${p.description}`.toLowerCase();
+      `${locationLabel(location)} ${location.description}`
+        .toLowerCase();
 
     if (!searchText.includes(query)) {
       continue;
@@ -268,16 +420,22 @@ function render() {
 
     const row = document.createElement("button");
 
+    row.type = "button";
     row.className = "place";
-    row.textContent = `#${p.number} · ${p.title}`;
+    row.textContent = locationLabel(location);
 
-    row.onclick = () => {
-      x = stage.clientWidth / 2 - p.u * W * scale;
-      y = stage.clientHeight / 2 - p.v * H * scale;
+    row.addEventListener("click", () => {
+      x =
+        stage.clientWidth / 2 -
+        location.u * MAP_WIDTH * scale;
+
+      y =
+        stage.clientHeight / 2 -
+        location.v * MAP_HEIGHT * scale;
 
       transform();
-      openLoc(p.id);
-    };
+      openLocation(location.id);
+    });
 
     list.append(row);
   }
@@ -285,206 +443,339 @@ function render() {
   $("count").textContent = `(${locations.length})`;
 
   if (!list.children.length) {
-    const d = document.createElement("p");
+    const empty = document.createElement("p");
 
-    d.className = "empty";
-    d.textContent = locations.length
+    empty.className = "empty";
+
+    empty.textContent = locations.length
       ? "No locations match your search."
       : "No locations placed yet.";
 
-    list.append(d);
+    list.append(empty);
   }
 }
 
-// ADD AND EDIT LOCATIONS
+// FIND AVAILABLE MAP NUMBER
 
-function nextNumber() {
-  for (let n = 1; n <= 60; n++) {
-    if (!locations.some(p => p.number === n)) {
-      return n;
+function nextNumber(excludingId = null) {
+  for (let number = 1; number <= 60; number++) {
+    if (
+      !locations.some(
+        (item) =>
+          item.id !== excludingId &&
+          locationType(item) === "map" &&
+          item.number === number
+      )
+    ) {
+      return number;
     }
   }
 
   return 0;
 }
 
-function editLoc(id) {
-  let p = locations.find(a => a.id === id);
-  const newP = !p;
+// ADD OR EDIT A LOCATION
 
-  if (!p) {
-    p = {
-      id: "loc" + Date.now() +
-        Math.random().toString(36).slice(2),
-      u: placingSpot.u,
-      v: placingSpot.v,
-      number: nextNumber(),
-      title: "",
-      description: "",
-      photo: ""
-    };
-  }
+function editLocation(id) {
+  if (!IS_EDITOR) return;
 
-  modal(`
+  const existing = locations.find(
+    (item) => item.id === id
+  );
+
+  const isNew = !existing;
+
+  const location = existing || {
+    id:
+      `loc${Date.now()}` +
+      Math.random().toString(36).slice(2),
+
+    type: "map",
+    number: nextNumber(),
+    title: "",
+    description: "",
+    photo: "",
+
+    ...placingSpot
+  };
+
+  const currentType = locationType(location);
+
+  showModal(`
     <div class="headrow">
-      <h2>${newP ? "Add" : "Edit"} location</h2>
+      <h2>${isNew ? "Add" : "Edit"} location</h2>
 
       <button
         class="x"
-        onclick="closeModal()"
-      >
-        ×
-      </button>
+        type="button"
+        data-close
+        aria-label="Close"
+      >×</button>
     </div>
 
-    <label>Marker number (1–60)</label>
-    <input
-      type="number"
-      id="pNum"
-      min="1"
-      max="60"
-      value="${p.number}"
-    >
+    <label for="pType">Location type</label>
 
-    <label>Location name</label>
+    <select
+      id="pType"
+      style="
+        width:100%;
+        padding:10px;
+        color:white;
+        background:#0e1c16;
+        border:1px solid #6b806f;
+        border-radius:6px;
+      "
+    >
+      <option
+        value="map"
+        ${currentType === "map" ? "selected" : ""}
+      >Map Location</option>
+
+      <option
+        value="murder"
+        ${currentType === "murder" ? "selected" : ""}
+      >Murder Location</option>
+
+      <option
+        value="session"
+        ${currentType === "session" ? "selected" : ""}
+      >Session Record</option>
+    </select>
+
+    <div id="numberRow">
+      <label for="pNum">
+        Marker number (1–60)
+      </label>
+
+      <input
+        id="pNum"
+        type="number"
+        min="1"
+        max="60"
+        value="${location.number ?? nextNumber(location.id)}"
+      >
+    </div>
+
+    <label for="pTitle" id="titleLabel">
+      Location name
+    </label>
+
     <input
       id="pTitle"
       maxlength="120"
-      value="${escapeHTML(p.title)}"
+      value="${escapeHTML(location.title)}"
       placeholder="e.g. The Old Skull Inn"
     >
 
-    <label>Player-facing description</label>
+    <label for="pDesc">
+      Player-facing description
+    </label>
+
     <textarea
       id="pDesc"
-      placeholder="What will your players see when they click this marker?"
-    >${escapeHTML(p.description)}</textarea>
+      placeholder="What should players read when they click here?"
+    >${escapeHTML(location.description)}</textarea>
 
-    <label>Image URL (optional)</label>
+    <label for="pPhoto">
+      Image URL (optional)
+    </label>
+
     <input
       id="pPhoto"
-      value="${escapeHTML(p.photo)}"
+      value="${escapeHTML(location.photo)}"
       placeholder="https://..."
     >
 
     <p class="note">
-      For illustrations, paste a public image URL.
-      The map itself is already built into this website.
+      The description appears in the player's popup.
+      Changes are published when you push to GitHub.
     </p>
 
     <div class="modal-foot">
-      ${newP ? "" : `
-        <button
-          class="btn danger"
-          id="deleteP"
-        >
-          Delete
-        </button>
-      `}
+      ${
+        isNew
+          ? ""
+          : `<button
+               class="btn danger"
+               type="button"
+               id="deleteP"
+             >Delete</button>`
+      }
 
       <button
         class="btn"
-        onclick="closeModal()"
-      >
-        Cancel
-      </button>
+        type="button"
+        data-close
+      >Cancel</button>
 
       <button
         class="btn gold"
+        type="button"
         id="saveP"
-      >
-        Save location
-      </button>
+      >Save location</button>
     </div>
   `);
 
-  $("saveP").onclick = async () => {
-    const n = Number($("pNum").value);
+  // Show fields appropriate to the selected type.
+  function updateTypeFields() {
+    const type = $("pType").value;
+
+    $("numberRow").style.display =
+      type === "map" ? "" : "none";
+
+    $("titleLabel").textContent =
+      type === "session"
+        ? "Session date (title)"
+        : type === "murder"
+          ? "Murder site title"
+          : "Location name";
+
+    $("pTitle").placeholder =
+      type === "session"
+        ? "e.g. October 27, 2026"
+        : type === "murder"
+          ? "e.g. Murder of Elira"
+          : "e.g. The Old Skull Inn";
+
+    if (
+      type === "map" &&
+      !(Number($("pNum").value) >= 1)
+    ) {
+      $("pNum").value =
+        nextNumber(location.id) || "";
+    }
+  }
+
+  $("pType").addEventListener(
+    "change",
+    updateTypeFields
+  );
+
+  updateTypeFields();
+
+  // Save location.
+  $("saveP").addEventListener("click", async () => {
+    const type = $("pType").value;
     const title = $("pTitle").value.trim();
-
-    if (!Number.isInteger(n) || n < 1 || n > 60) {
-      alert("Choose a number between 1 and 60.");
-      return;
-    }
-
-    if (locations.some(
-      t => t.id !== p.id && t.number === n
-    )) {
-      alert("That marker number is already used.");
-      return;
-    }
+    const number = Number($("pNum").value);
 
     if (!title) {
+      alert(
+        type === "session"
+          ? "Enter a session date."
+          : "Enter a location title."
+      );
+
       $("pTitle").focus();
       return;
     }
 
-    const before = locations.map(a => ({ ...a }));
+    if (type === "map") {
+      if (
+        !Number.isInteger(number) ||
+        number < 1 ||
+        number > 60
+      ) {
+        alert(
+          "Choose a marker number between 1 and 60."
+        );
+        return;
+      }
 
-    p.number = n;
-    p.title = title;
-    p.description = $("pDesc").value;
-    p.photo = $("pPhoto").value.trim();
-
-    if (newP) {
-      locations.push(p);
+      if (
+        locations.some(
+          (item) =>
+            item.id !== location.id &&
+            locationType(item) === "map" &&
+            item.number === number
+        )
+      ) {
+        alert(
+          "That numbered map marker is already used."
+        );
+        return;
+      }
     }
 
-    await commitChange(before);
-  };
+    const previous = locations.map(
+      (item) => ({ ...item })
+    );
 
-  if (!newP) {
-    $("deleteP").onclick = async () => {
-      if (confirm("Delete this location?")) {
-        const before = locations.map(a => ({ ...a }));
+    location.type = type;
+    location.title = title;
+    location.description = $("pDesc").value;
+    location.photo = $("pPhoto").value.trim();
 
-        locations = locations.filter(
-          t => t.id !== p.id
+    if (type === "map") {
+      location.number = number;
+    } else {
+      delete location.number;
+    }
+
+    if (isNew) {
+      locations.push(location);
+    }
+
+    await commitChange(previous);
+  });
+
+  // Delete existing location.
+  if (!isNew) {
+    $("deleteP").addEventListener(
+      "click",
+      async () => {
+        if (!confirm("Delete this location?")) {
+          return;
+        }
+
+        const previous = locations.map(
+          (item) => ({ ...item })
         );
 
-        await commitChange(before);
+        locations = locations.filter(
+          (item) => item.id !== location.id
+        );
+
+        await commitChange(previous);
       }
-    };
+    );
   }
 }
 
-// EXPOSE EDIT HANDLER FOR MODAL BUTTONS
+// DM EDITOR MODE
 
-window.editLoc = editLoc;
-
-// DM MODE
-
-function setDM() {
-  dm = IS_EDITOR;
-
+function setEditorMode() {
   for (const id of [
     "addBtn",
     "exportBtn",
     "importBtn"
   ]) {
-    $(id).classList.toggle("hide", !dm);
+    $(id).classList.toggle(
+      "hide",
+      !IS_EDITOR
+    );
   }
 
-  $("hint").textContent = dm
-    ? "Local DM editor · Click Add location, then click the map to place a marker."
-    : "Drag to pan · Scroll to zoom · Click a numbered circle to open its story";
+  $("saveStatus").classList.toggle(
+    "hide",
+    !IS_EDITOR
+  );
 
-  $("panelTip").textContent = dm
-    ? "Local editor: saving writes directly to locations.json. Commit and push the changed file to publish."
-    : "The whole map is yours to explore.";
+  $("hint").textContent = IS_EDITOR
+    ? "Local DM editor · Add a location, then click the map to position its marker."
+    : "Drag to pan · Scroll to zoom · Click a marker for information";
 
-  $("saveStatus").classList.toggle("hide", !dm);
+  $("panelTip").textContent = IS_EDITOR
+    ? "Saving updates locations.json. Commit and push to publish changes."
+    : "Explore Shadowdale's locations, murder scenes, and session records.";
 }
 
-setDM();
+setEditorMode();
 
 // ADD LOCATION BUTTON
 
-$("addBtn").onclick = () => {
-  if (nextNumber() === 0) {
-    alert("All 60 numbers are in use.");
-    return;
-  }
+$("addBtn").addEventListener("click", () => {
+  if (!IS_EDITOR) return;
 
   placing = !placing;
 
@@ -493,76 +784,84 @@ $("addBtn").onclick = () => {
     : "+ Add location";
 
   $("hint").textContent = placing
-    ? "Click the map to position your numbered marker."
-    : "DM mode: Add location, then click the map to place its marker.";
-};
+    ? "Click anywhere on the map to place the marker. Choose its type in the next window."
+    : "Local DM editor · Add a location, then click the map to position its marker.";
+});
 
-// MAP POINTER CONTROLS
+// MAP POINTER EVENTS
 
-stage.addEventListener("pointerdown", e => {
-  if (e.target.closest(
-    "button,input,.panel,.controls,.bottom"
-  )) {
+stage.addEventListener("pointerdown", (event) => {
+  if (
+    event.target.closest(
+      "button,input,.panel,.controls,.bottom"
+    )
+  ) {
     return;
   }
 
   drag = {
-    x: e.clientX,
-    y: e.clientY,
+    x: event.clientX,
+    y: event.clientY,
     origX: x,
-    origY: y,
-    id: e.pointerId
+    origY: y
   };
 
   dragged = false;
-  stage.setPointerCapture(e.pointerId);
+
+  stage.setPointerCapture(event.pointerId);
 });
 
-stage.addEventListener("pointermove", e => {
+stage.addEventListener("pointermove", (event) => {
   if (!drag) return;
 
-  const dx = e.clientX - drag.x;
-  const dy = e.clientY - drag.y;
+  const dx = event.clientX - drag.x;
+  const dy = event.clientY - drag.y;
 
   if (Math.abs(dx) + Math.abs(dy) > 5) {
     dragged = true;
   }
 
-  if (dragged) {
-    stage.classList.add("drag");
+  if (!dragged) return;
 
-    x = drag.origX + dx;
-    y = drag.origY + dy;
+  stage.classList.add("drag");
 
-    transform();
-  }
+  x = drag.origX + dx;
+  y = drag.origY + dy;
+
+  transform();
 });
 
-stage.addEventListener("pointerup", e => {
+stage.addEventListener("pointerup", (event) => {
   if (!drag) return;
 
-  if (!dragged && placing) {
-    const r = stage.getBoundingClientRect();
+  if (!dragged && placing && IS_EDITOR) {
+    const rect = stage.getBoundingClientRect();
 
     const u =
-      (e.clientX - r.left - x) / scale / W;
+      (event.clientX - rect.left - x) /
+      scale / MAP_WIDTH;
 
     const v =
-      (e.clientY - r.top - y) / scale / H;
+      (event.clientY - rect.top - y) /
+      scale / MAP_HEIGHT;
 
     if (
-      u >= 0 && u <= 1 &&
-      v >= 0 && v <= 1
+      u >= 0 &&
+      u <= 1 &&
+      v >= 0 &&
+      v <= 1
     ) {
       placingSpot = { u, v };
+
       placing = false;
 
-      $("addBtn").textContent = "+ Add location";
+      $("addBtn").textContent =
+        "+ Add location";
 
       $("hint").textContent =
-        "DM mode: Add location, then click the map to place its marker.";
+        "Local DM editor · Add a location, then click the map to position its marker.";
 
-      editLoc(null);
+      editLocation(null);
     }
   }
 
@@ -577,122 +876,166 @@ stage.addEventListener("pointercancel", () => {
 
 // MOUSE WHEEL ZOOM
 
-stage.addEventListener("wheel", e => {
-  if (e.target.closest(".panel")) {
-    return;
-  }
+stage.addEventListener("wheel", (event) => {
+  if (event.target.closest(".panel")) return;
 
-  e.preventDefault();
+  event.preventDefault();
 
-  const r = stage.getBoundingClientRect();
+  const rect = stage.getBoundingClientRect();
 
   zoom(
-    Math.exp(-e.deltaY * 0.001),
-    e.clientX - r.left,
-    e.clientY - r.top
+    Math.exp(-event.deltaY * 0.001),
+    event.clientX - rect.left,
+    event.clientY - rect.top
   );
 
 }, { passive: false });
 
-// MAP BUTTONS
+// MAP CONTROLS
 
-$("plus").onclick = () => zoom(1.3);
-$("minus").onclick = () => zoom(1 / 1.3);
-$("fitBtn").onclick = fit;
+$("plus").addEventListener(
+  "click",
+  () => zoom(1.3)
+);
 
-$("filter").addEventListener("input", render);
+$("minus").addEventListener(
+  "click",
+  () => zoom(1 / 1.3)
+);
+
+$("fitBtn").addEventListener(
+  "click",
+  fitMap
+);
+
+$("filter").addEventListener(
+  "input",
+  render
+);
 
 // EXPORT LOCATIONS
 
-$("exportBtn").onclick = () => {
+$("exportBtn").addEventListener("click", () => {
+  if (!IS_EDITOR) return;
+
   const blob = new Blob(
     [
-      JSON.stringify({
-        format: "shadowdale-locations-v2",
-        locations
-      }, null, 2)
+      JSON.stringify(
+        {
+          format: "shadowdale-locations-v3",
+          locations
+        },
+        null,
+        2
+      )
     ],
-    { type: "application/json" }
+    {
+      type: "application/json"
+    }
   );
 
-  const a = document.createElement("a");
   const url = URL.createObjectURL(blob);
 
-  a.href = url;
-  a.download = "blood-in-shadowdale-locations.json";
-  a.click();
+  const link = document.createElement("a");
 
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-};
+  link.href = url;
+  link.download =
+    "blood-in-shadowdale-locations.json";
+
+  link.click();
+
+  setTimeout(
+    () => URL.revokeObjectURL(url),
+    1000
+  );
+});
 
 // IMPORT LOCATIONS
 
-$("importBtn").onclick = () => {
-  $("importFile").click();
-};
-
-$("importFile").onchange = async e => {
-  const f = e.target.files[0];
-
-  if (!f) return;
-
-  try {
-    const data = JSON.parse(await f.text());
-
-    const arr = Array.isArray(data)
-      ? data
-      : data.locations;
-
-    if (
-      !Array.isArray(arr) ||
-      !arr.every(p =>
-        Number.isInteger(p.number) &&
-        p.number >= 1 &&
-        p.number <= 60 &&
-        typeof p.title === "string" &&
-        typeof p.u === "number" &&
-        typeof p.v === "number" &&
-        p.u >= 0 &&
-        p.u <= 1 &&
-        p.v >= 0 &&
-        p.v <= 1 &&
-        typeof p.id === "string"
-      )
-    ) {
-      throw Error("Invalid locations file");
-    }
-
-    if (!confirm(
-      "Replace all current locations with the imported file?"
-    )) {
-      return;
-    }
-
-    const before = locations.map(a => ({ ...a }));
-
-    locations = arr.map(p => ({
-      id: p.id,
-      number: p.number,
-      title: p.title,
-      description: String(p.description || ""),
-      photo: String(p.photo || ""),
-      u: p.u,
-      v: p.v
-    }));
-
-    await commitChange(before);
-
-  } catch (err) {
-    alert("Import failed: " + err.message);
+$("importBtn").addEventListener("click", () => {
+  if (IS_EDITOR) {
+    $("importFile").click();
   }
+});
 
-  e.target.value = "";
-};
+$("importFile").addEventListener(
+  "change",
+  async (event) => {
+    if (!IS_EDITOR) return;
 
-// INITIALIZE APPLICATION
+    const file = event.target.files[0];
 
-window.addEventListener("resize", fit);
+    if (!file) return;
+
+    try {
+      const data = JSON.parse(
+        await file.text()
+      );
+
+      const values = Array.isArray(data)
+        ? data
+        : data.locations;
+
+      if (!Array.isArray(values)) {
+        throw Error("Invalid locations file.");
+      }
+
+      const imported = values.map(
+        normalizedImport
+      );
+
+      const used = new Set();
+
+      for (const item of imported) {
+        if (locationType(item) !== "map") {
+          continue;
+        }
+
+        if (used.has(item.number)) {
+          throw Error(
+            "Duplicate numbered map marker."
+          );
+        }
+
+        used.add(item.number);
+      }
+
+      if (
+        !confirm(
+          "Replace all current locations with the imported file?"
+        )
+      ) {
+        return;
+      }
+
+      const previous = locations.map(
+        (item) => ({ ...item })
+      );
+
+      locations = imported;
+
+      await commitChange(previous);
+
+    } catch (error) {
+      alert(
+        `Import failed: ${error.message}`
+      );
+
+    } finally {
+      event.target.value = "";
+    }
+  }
+);
+
+// INITIALIZE
+
+window.addEventListener(
+  "resize",
+  fitMap
+);
 
 render();
-requestAnimationFrame(fit);
+
+requestAnimationFrame(fitMap);
+
 loadLocations();

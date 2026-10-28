@@ -2,462 +2,567 @@
   "locations": [
     {
       "id": "loc1793136140003iomg01fv1z",
-      "number": 1,
+      "type": "map",
       "title": "The Common",
       "description": "\nThe Common is the heart of Shadowdale, a broad, open gathering place surrounded by homes, shops, and other buildings. Merchants, farmers, and travelers gather here to trade goods, exchange news, and conduct their daily business. During festivals and celebrations, the space comes alive with music, food, and festivities. In recent months, however, tensions between the human and elven populations have cast a shadow over the once-welcoming square, with rumors of mysterious murders fueling suspicion and distrust.",
       "photo": "",
       "u": 0.5389495036394062,
-      "v": 0.6228069230519523
+      "v": 0.6228069230519523,
+      "number": 1
     },
     {
       "id": "loc1793136979805hrlo13art3",
-      "number": 2,
+      "type": "map",
       "title": "Twisted Tower of Ashaba",
       "description": "\nThe Twisted Tower of Ashaba is the oldest and most imposing structure in Shadowdale, serving as both a fortified stronghold and the traditional seat of the dale's rulers. Its distinctive five-story tower rises at an unusual angle above a massive stone fortress, giving the ancient structure its name. \n\nOriginally constructed by the drow thousands of years ago, the fortress was liberated in 906 DR by the water wizard Ashaba, who became Shadowdale's first human lord. Since then, the tower has stood as a symbol of the dale's independence, surviving countless sieges, invasions, and conflicts. Beneath its ancient foundations lie extensive subterranean chambers, including long-sealed passages leading into the Underdark. \n\nToday, the fortress remains an important center of authority and military defense, its walls a reminder of Shadowdale's troubled history.",
       "photo": "",
       "u": 0.20815022774945163,
-      "v": 0.4677658320505364
+      "v": 0.4677658320505364,
+      "number": 2
     },
     {
       "id": "loc1793137332362s30t4429fg",
-      "number": 3,
+      "type": "map",
       "title": "House of the Lady",
       "description": "\nThe House of the Lady is the oldest temple in the Shadowdale region, dedicated to Tymora, the goddess of good fortune, luck, and adventure. Situated across the River Ashaba from the village, the temple is distinguished by its magnificent golden dome and a low protective stone wall surrounding its grounds. \n\nBuilt upon the ruins of an ancient temple to Tyche, the predecessor of Tymora and Beshaba, it has long served as a sanctuary for adventurers, travelers, and those seeking Lady Luck's favor. Within its halls, priests offer healing, blessings, guidance, and information to those preparing for dangerous journeys. \n\nDespite Shadowdale's turbulent history, the House of the Lady remains a welcoming refuge where a little faith, a generous offering, and a fortunate roll of the dice might change one's destiny.",
       "photo": "",
       "u": 0.1278596790517025,
-      "v": 0.6074472126917735
+      "v": 0.6074472126917735,
+      "number": 3
     },
     {
       "id": "loc1793137498032tebe3zy2y8k",
-      "number": 4,
+      "type": "map",
       "title": "Shrine to Mystra",
       "description": "\nThe Shrine to Mystra is a modest but sacred monument dedicated to Mystra, the goddess of magic and guardian of the Weave. Situated on a low rise behind the House of the Lady, the shrine consists of a three-tiered stone pyramid, its highest step bearing Mystra's symbol in silver against dark stone. \n\nUnlike Shadowdale's larger temples, the shrine has no resident priests or appointed caretakers, relying instead on visiting worshippers to maintain its grounds. Wizards, travelers, and townsfolk frequently visit to offer prayers, seek blessings, or ask for favorable outcomes in magical endeavors. The shrine overlooks both the ruins of Syluné's Hut and Elminster's Tower, a deliberate tribute to two of Mystra's most celebrated servants. \n\nLocal legend claims that anyone speaking atop the shrine can be heard by Elminster himself, though whether the Old Sage actually listens remains a matter of speculation.",
       "photo": "",
       "u": 0.057339948238962414,
-      "v": 0.516399853640376
+      "v": 0.516399853640376,
+      "number": 4
     },
     {
       "id": "loc1793137705179x2481b0plfl",
-      "number": 5,
+      "type": "map",
       "title": "River Ashaba",
       "description": "\nThe River Ashaba is one of the defining geographical features of Shadowdale, winding through the fertile countryside and forests of the Dalelands. Flowing southward from its headwaters in the Desertsmouth Mountains, the river passes through Shadowdale before continuing toward Mistledale and eventually joining the River Lis. \n\nIts waters sustain the surrounding farms, provide fresh drinking water, and support an abundance of fish and wildlife. Several bridges and crossings connect the settlements and roads along its banks, making the river an important part of local travel and commerce. \n\nThough generally peaceful, the Ashaba can become dangerous during periods of heavy rainfall and spring snowmelt, when its waters rise and the current grows swift. The river takes its name from Ashaba, the legendary water wizard who liberated Shadowdale from drow rule and became its first human lord.",
       "photo": "",
       "u": 0.32157655844944644,
-      "v": 0.38124253913355516
+      "v": 0.38124253913355516,
+      "number": 5
     },
     {
       "id": "loc1793137779352opflpqe9xb",
-      "number": 6,
+      "type": "map",
       "title": "The Old Skull",
       "description": "\nThe Old Skull is a prominent, rocky hill rising above the surrounding countryside of Shadowdale. Its weathered slopes, scattered boulders, and sparse vegetation make it a distinctive landmark visible from much of the surrounding area. \n\nLong associated with the dale's history, the hill has served as a gathering place, lookout, and point of reference for generations of travelers and locals. Though its name evokes something more sinister, the Old Skull is primarily a natural landmark, its imposing silhouette standing as a familiar symbol of Shadowdale.",
       "photo": "",
       "u": 0.4872554684606748,
-      "v": 0.3659737227364408
+      "v": 0.3659737227364408,
+      "number": 6
     },
     {
       "id": "loc1793137881427q9wlzbhkzn",
-      "number": 7,
+      "type": "map",
       "title": "Ruins of Elminster's Tower",
       "description": "\nOnce the home of Elminster Aumar, the legendary Sage of Shadowdale and one of the most powerful wizards in Faerûn, the ruins of Elminster's Tower stand as a reminder of the dale's extraordinary magical history. Though the tower itself has long since fallen into ruin, its crumbling stone walls and overgrown foundations remain a place of fascination for adventurers, scholars, and curious travelers. \n\nLocals warn that the ruins are still protected by the Old Sage's magical wards, strange enchantments, and unpredictable defenses, some of which may remain active centuries after their creation. Rumors persist of hidden chambers beneath the tower, containing forgotten knowledge, magical artifacts, and secrets best left undisturbed. \n\nWhether Elminster himself still visits the ruins is unknown, though few in Shadowdale would dare wager against it.",
       "photo": "",
       "u": 0.3653328041441824,
-      "v": 0.47455197267147614
+      "v": 0.47455197267147614,
+      "number": 7
     },
     {
       "id": "loc17931379705351uok8ep91cb",
-      "number": 8,
+      "type": "map",
       "title": "Talmere's Weavery",
       "description": "\nTalmere's Weavery is a family-owned workshop in Shadowdale, known for producing sturdy, well-crafted fabrics, clothing, and household textiles. \n\nThe establishment is owned and operated by Orlan Talmere a 47-year-old master weaver who has dedicated much of his life to the trade. His wife, Mira, oversees the dyeing and sewing, while their eldest daughter, Sella, works as a journeyman weaver. Their son, Perrin, is learning the family craft as an apprentice, while their youngest daughter, Lysa, is often found playing around the workshop. \n\nThe family lives above and behind the establishment, where the rhythmic clatter of looms can be heard throughout the day. Serving farmers, merchants, and travelers alike, Talmere's Weavery remains a familiar and dependable fixture of everyday life in Shadowdale.",
       "photo": "",
       "u": 0.41660839679927764,
-      "v": 0.5637891620332988
+      "v": 0.5637891620332988,
+      "number": 8
     },
     {
       "id": "loc1793138398020gvyevgzcgaa",
-      "number": 9,
+      "type": "map",
       "title": "Tethgar House",
       "description": "\nTethgar House is the ancestral home of the Tethgar family, a respected household with deep roots in Shadowdale's history. \n\nThe house is currently maintained by Garran Tethgar, a 46-year-old mason and stoneworker descended from Garson Tethgar, whose name remains part of the family's proud heritage. Garran lives with his wife, Mera, and their two sons, Cor, aged 15, and Garson Tethgar II, aged 10, who carries the name of his distinguished ancestor. Their eldest daughter, Senna, aged 19, serves as a novice at Morningdawn Hall, where she has devoted herself to religious service. \n\nThough modest compared to the great estates of nobility, Tethgar House reflects generations of craftsmanship, tradition, and loyalty to Shadowdale. The family's longstanding presence has earned them a measure of respect among the townsfolk, particularly those who value the dale's history and the families who helped shape it.",
       "photo": "",
       "u": 0.43876757214209966,
-      "v": 0.5500691623089975
+      "v": 0.5500691623089975,
+      "number": 9
     },
     {
       "id": "loc1793138770662hc01btplzz",
-      "number": 10,
+      "type": "map",
       "title": "Selgard House",
       "description": "\nSelgard House is the longtime residence of the Selgard family, a hardworking household whose roots in Shadowdale stretch back generations. \n\nThe home is maintained by Darric Selgard, a 49-year-old master blacksmith descended from Aleena Selgard, who continues the family's tradition of metalworking at the neighboring smithy. Darric lives with his wife, Mira, aged 46, who manages the smithy's accounts and customers, and their three children: Toren, aged 21, who works alongside his father as a blacksmith; Lysa, aged 15, who serves in the household of Helena Marr; and Bran, aged 9, the youngest of the family. \n\nThough modest in appearance, Selgard House reflects generations of craftsmanship, perseverance, and dedication to the community. The family's reputation for honest work and dependable craftsmanship has earned them the respect of their neighbors throughout Shadowdale.",
       "photo": "",
       "u": 0.45981486877001954,
-      "v": 0.5401311382509322
+      "v": 0.5401311382509322,
+      "number": 10
     },
     {
       "id": "loc17931389396400qcwtxo4ai6",
-      "number": 11,
+      "type": "map",
       "title": "Selgard Smithy",
       "description": "\nSelgard Smithy is a well-established blacksmith's workshop located beside Selgard House, operated by Darric Selgard, a 49-year-old master blacksmith descended from Aleena Selgard. \n\nDarric works alongside his eldest son, Toren, aged 21, who is learning the family trade and developing his own skills at the forge. Darric's wife, Mira, aged 46, manages the smithy's accounts, orders, and dealings with customers. \n\nThe workshop produces a variety of essential metalwork, including horseshoes, farming tools, household fittings, and the occasional weapon or piece of armor for travelers and local guards. The steady ringing of hammer against anvil, the heat of the forge, and the smell of burning coal are familiar features of the establishment. \n\nGenerations of Selgards have maintained the smithy, earning the family a reputation for reliable craftsmanship, fair prices, and honest dealings. \n\nFor the people of Shadowdale, Selgard Smithy remains an important part of everyday life, serving farmers, merchants, guards, and adventurers alike.",
       "photo": "",
       "u": 0.47968456753777877,
-      "v": 0.5291517423509002
+      "v": 0.5291517423509002,
+      "number": 11
     },
     {
       "id": "loc1793139104785lbfdi9d2tts",
-      "number": 12,
+      "type": "map",
       "title": "The Stone House",
       "description": "\nThe Stone House is a large, sturdy stone building in Shadowdale that serves as a communal storage facility for food and provisions belonging to local businesses. \n\nConstructed with thick stone walls and heavy wooden doors, the building provides a secure place for merchants, innkeepers, and other establishments to store grain, preserved meats, dried goods, and other essential supplies. Its solid construction helps protect its contents from the elements, pests, and theft, making it an important part of the town's commercial infrastructure. \n\nThroughout the day, merchants and laborers can be seen transporting sacks, crates, and barrels to and from the building, keeping Shadowdale's shops, taverns, and kitchens supplied. \n\nThough unremarkable in appearance, the Stone House plays a vital role in the daily life of the community, particularly during the harsh winter months when reliable food reserves are essential.",
       "photo": "",
       "u": 0.5018036682383801,
-      "v": 0.5176733328450727
+      "v": 0.5176733328450727,
+      "number": 12
     },
     {
       "id": "loc179313930905525yyc6tqrmd",
-      "number": 13,
+      "type": "map",
       "title": "Selgard Curios & Trade",
       "description": "\nSelgard Curios & Trade is a family-owned merchant shop operated by Corvin Selgard, a 45-year-old trader descended from Berr Selgard, and his wife, Elayne, aged 43. Although the Selgard family has a longstanding tradition of blacksmithing in Shadowdale, Corvin chose to pursue a different path, leaving the forge behind in favor of commerce and trade. \n\nRather than following his relatives into the smithing profession, he established a business specializing in unusual curiosities, imported goods, household supplies, and miscellaneous wares acquired from traveling merchants. Corvin and Elayne run the establishment together, assisted by their daughter, Maren, aged 17, who helps manage customers and organize merchandise, and their younger son, Davin, aged 12, who occasionally lends a hand around the shop. \n\nWhile Corvin maintains close ties with his relatives at the nearby Selgard Smithy, his decision to pursue trade has established a separate branch of the family's livelihood. The shop has become a familiar destination for townsfolk seeking everyday necessities and travelers hoping to discover rare or unusual items among its shelves.",
       "photo": "",
       "u": 0.5235479052282006,
-      "v": 0.510187397709786
+      "v": 0.510187397709786,
+      "number": 13
     },
     {
       "id": "loc1793139531656wlvgxznsyvd",
-      "number": 14,
+      "type": "map",
       "title": "Lulhannon House",
       "description": "\nLulhannon House is the ancestral home of the Lulhannon family, a longstanding Shadowdale household whose history reaches back to the days of the Zhentarim occupation. \n\nThe family traces its lineage to Betra Lulhannon, daughter of Meira Lulhannon, a well-known potter and breadmaker who served the village during its troubled past. During the Zhentarim occupation, Betra and her sisters, Jassa and Mari, were forced to seek refuge at remote farmsteads to escape the unwanted attentions of Zhentilar soldiers. \n\nToday, the house is maintained by Tressa Lulhannon, aged 45, a descendant of Betra, and her husband, Calder, aged 47. They have three children: Mira, aged 20, and Joran, aged 17, both of whom work at Dunlow's General Goods, and their youngest daughter, Sella, aged 12. \n\nThough the family no longer practices the pottery and breadmaking trades for which their ancestors were known, Lulhannon House remains a reminder of Shadowdale's resilience through generations of hardship and conflict. The family's enduring presence reflects the determination of ordinary townsfolk who helped preserve the dale through some of its darkest years.",
       "photo": "",
       "u": 0.5452920873009817,
-      "v": 0.5022023758638686
+      "v": 0.5022023758638686,
+      "number": 14
     },
     {
       "id": "loc1793139713333l8hjfw5pdag",
-      "number": 15,
+      "type": "map",
       "title": "The Old Skull Inn",
       "description": "\nThe Old Skull Inn is one of Shadowdale's oldest and most celebrated establishments, renowned throughout the Dalelands and beyond as a gathering place for adventurers, merchants, and travelers. \n\nOriginally built around 1280 DR by Buldo Silvermane upon the site of the former Twisted Tower Inn, the three-story establishment earned its reputation through the hospitality and formidable character of Jhaele Silvermane, whose management made it one of the most respected inns in Faerûn. \n\nToday, the inn is operated by her descendant, Durren Silvermane, a 52-year-old proprietor who maintains the family's longstanding traditions of honest service, excellent food, and welcoming accommodations. Durren is assisted by his wife, Lessa, aged 49, who oversees the kitchens and guest rooms, and their daughter, Jhaela, aged 22, who manages the bar and attends to guests. The inn also employs Vessa Selgard, aged 17, as a server, and Tomas Moss, aged 18, who handles cleaning, dishwashing, and clearing tables. \n\nIts spacious ground-floor taproom, numerous guest chambers, and extensive cellars have welcomed generations of travelers, while persistent rumors speak of hidden passages beneath the building leading toward the Old Skull and the Underdark. \n\nImmediately outside stands the village's Message Post, where public notices, announcements, employment opportunities, and requests for adventuring assistance are displayed for townsfolk and travelers alike. \n\nNearby, the inn's stables are maintained by Braun Silvermane, aged 20, who serves as stablemaster and occasionally assists with the inn's daily operations. Across the street stands a communal well, providing fresh water to the inn, neighboring businesses, and local residents. \n\nTogether, these facilities make the Old Skull Inn one of Shadowdale's busiest centers of commerce, conversation, and community life, where news from distant lands mingles with local gossip and the adventures of tomorrow often begin over a tankard of ale.",
       "photo": "",
       "u": 0.5730347477507277,
-      "v": 0.48822864246213965
+      "v": 0.48822864246213965,
+      "number": 15
     },
     {
       "id": "loc1793139899899ynsnc8gz6a",
-      "number": 16,
+      "type": "map",
       "title": "House of Plenty",
       "description": "\nThe House of Plenty is Shadowdale's principal temple dedicated to Chauntea, the Earthmother and goddess of agriculture, fertility, and the harvest. \n\nFounded shortly after the Time of Troubles, the temple originally operated from the barn of Beregon Hillstar before its followers established a permanent sanctuary upon a marshy stretch of land once known as the Bog. With the assistance of local druids, the marshland was drained and transformed into a flourishing religious complex consisting of three buildings connected by columned porticoes in a broad C-shaped arrangement, forming a natural amphitheater for worship and ceremonies. \n\nSurrounding the temple are extensive gardens known locally as the Garden, featuring vegetable plots, flower beds, carefully maintained topiaries, a small orchard, and a garden maze. \n\nHistorically overseen by High Harvestmistress Glamerie Windbough, the temple is now led by Merra Bestil, a 41-year-old Harvestmistress of Chauntea who maintains the sanctuary's traditions of charity, cultivation, and service to the community. She is assisted by Halan Ohane, aged 34, an underpriest descended from the Ohane family, and Kella Selgard, aged 20, a lay servant and novice from Selgard Farm. Bryn Hillstar, aged 16, from Helmark Hillstar Farm, also serves as a seasonal temple assistant, continuing the longstanding connection between the Hillstar family and the House of Plenty. \n\nThe temple provides healing, food, agricultural assistance, and spiritual guidance to the people of Shadowdale, particularly struggling farmers and families in need. Its clergy also cultivate experimental crops intended to survive the harsh winters of the Dalelands, making the House of Plenty both a sacred sanctuary and an essential pillar of the dale's agricultural prosperity.",
       "photo": "",
       "u": 0.6465151742788782,
-      "v": 0.470262398137452
+      "v": 0.470262398137452,
+      "number": 16
     },
     {
       "id": "loc17931401330528ry0mh4gif",
-      "number": 17,
+      "type": "map",
       "title": "Dunlow's General Goods",
       "description": "\nDunlow's General Goods is one of Shadowdale's principal trading establishments, serving farmers, craftsmen, merchants, and travelers with a wide assortment of everyday supplies and equipment. \n\nThe shop occupies the former general store of Weregund the Trader, a prominent merchant who once operated one of the dale's busiest trading posts alongside his wife, Meershand, and their children. Known for his extensive dealings with passing caravans and merchants from Cormyr and Hillsfar, Weregund established the business as an important center of commerce in Shadowdale. \n\nToday, the establishment is operated by Harran Dunlow, a 48-year-old merchant descended from the Weregund and Meershand family line through a later Dunlow marriage, and his wife, Mera, aged 46, who serves as co-owner. Their daughter, Tessa, aged 21, works as a clerk and buyer, helping secure merchandise from traveling traders, while their son, Corren, aged 14, assists with stocking shelves and general maintenance. The family also employs Mira Lulhannon, aged 20, and her younger brother, Joran, aged 17, both members of the longstanding Lulhannon family of Shadowdale. \n\nThe shop carries everything from rope, lanterns, tools, clothing, and household necessities to traveling equipment, weapons, and occasional imported curiosities. Like its predecessor, Dunlow's maintains connections with merchant caravans traveling through the Dalelands, allowing customers to order goods unavailable locally. \n\nThough ownership and names have changed over the generations, Dunlow's General Goods continues the mercantile tradition established by Weregund, remaining an essential source of supplies and a familiar gathering place for the people of Shadowdale.",
       "photo": "",
       "u": 0.6142737648804872,
-      "v": 0.5431255123050468
+      "v": 0.5431255123050468,
+      "number": 17
     },
     {
       "id": "loc1793140285737jfm79453ig7",
-      "number": 18,
+      "type": "map",
       "title": "Typan Wagonworks & Woodworking",
       "description": "\nTypan Wagonworks & Woodworking is one of Shadowdale's oldest and most respected carpentry establishments, tracing its origins to the workshop of Hammerhand Bucko, a renowned wagonmaker and woodworker who operated the business more than a century ago. \n\nThe workshop eventually passed into the hands of Typyas, Hammerhand's exceptionally talented journeyman, who had originally disguised herself as a man to learn the trade under the notoriously chauvinistic craftsman. Despite his initial outrage upon discovering her identity, Hammerhand recognized her extraordinary skill, and she ultimately became his most accomplished apprentice and intended successor. \n\nToday, the business is operated by Garren Typan, a 50-year-old master wagonmaker descended from Typyas's family line, who continues the woodworking tradition established by his ancestors. Garren is assisted by his wife, Mella, aged 47, who manages the business's accounts and finances, and their two eldest children: Tyra, aged 22, a skilled journeyman woodworker following in the footsteps of her distinguished ancestor, and Harl, aged 17, who is learning the family trade as an apprentice. Their youngest daughter, Jessa, aged 11, occasionally visits the workshop but has yet to begin learning the craft. \n\nThe establishment specializes in constructing and repairing wagons, carts, and other wheeled vehicles, while also undertaking carpentry projects ranging from finely carved furniture and decorative wooden goods to structural timberwork and entire buildings. The workshop remains an important part of Shadowdale's commercial life, serving farmers, merchants, and travelers who depend upon reliable transportation and skilled craftsmanship. \n\nThrough generations of changing ownership, the Typan family has preserved the legacy of Hammerhand Bucko and Typyas, maintaining a reputation for quality workmanship, fair dealings, and dedication to the people of Shadowdale.",
       "photo": "",
       "u": 0.5764088506499909,
-      "v": 0.5680786050543901
+      "v": 0.5680786050543901,
+      "number": 18
     },
     {
       "id": "loc179314045807497ww1z6hhr",
-      "number": 19,
+      "type": "map",
       "title": "Brannon's Boardinghouse",
       "description": "\nBrannon Boardinghouse is a longstanding lodging establishment in Shadowdale, providing affordable accommodations to travelers, merchants, laborers, and those seeking extended stays in the village. \n\nThe boardinghouse traces its history to Latha Brannon, a respected local proprietor who fought in defense of Shadowdale and was badly wounded during one of its earlier conflicts. Latha later perished during the Zhentarim occupation, leaving his elderly aunt, Uda Brannon, and his three daughters, Ester, Emra, and Ilil, to maintain the business while Zhentilar soldiers commandeered the building as a barracks. \n\nToday, the establishment is operated by Mara Brannon, aged 45, a descendant of Ester Brannon, who has continued the family's tradition of hospitality. She is assisted by her husband, Tobren, aged 47, who oversees cooking, repairs, and general maintenance, and their daughter, Ester Brannon II, aged 20, who helps manage guests and daily operations. Their youngest son, Cal, aged 14, assists with household chores and maintaining the property. \n\nUnlike the more celebrated Old Skull Inn, Brannon Boardinghouse caters primarily to guests seeking practical, inexpensive lodging rather than entertainment or luxury. Its simple but comfortable rooms, communal dining area, and welcoming atmosphere have made it a dependable refuge for generations of visitors. \n\nDespite the hardships endured by the family throughout Shadowdale's turbulent history, the Brannons have preserved the establishment as a symbol of perseverance, hospitality, and the enduring spirit of the dale.",
       "photo": "",
       "u": 0.546041924556622,
-      "v": 0.583549562035594
+      "v": 0.583549562035594,
+      "number": 19
     },
     {
       "id": "loc1793140817898pb1rkjcnlj",
-      "number": 20,
+      "type": "map",
       "title": "Apothecary",
       "description": "\nThe Apothecary, traditionally known as Selgard's House of Healing, is a small, family-operated establishment specializing in medicinal herbs, poultices, and healing potions for the residents of Shadowdale and travelers passing through the village. \n\nThe business is operated by Maerin Selgard, aged 44, a descendant of Traith Selgard, one of the surviving children of Bronn and Leath Selgard. Although Maerin is not a formally trained healer, she possesses considerable practical knowledge of herbal remedies and basic medicine, allowing her to clean and dress minor wounds, prepare medicinal treatments, and provide relief for common ailments. Her primary expertise lies in cultivating medicinal plants, preparing herbal mixtures, and brewing or procuring potions of healing for sale. Maerin is assisted by her husband, Teren Selgard, aged 46, who manages supplies, maintains the property, and oversees much of the establishment's daily operations. \n\nThe building serves as both their residence and place of business, with shelves lined with dried herbs, glass vials, medicinal powders, and carefully labeled jars of remedies. While serious injuries, diseases, and magical afflictions are generally referred to the experienced clergy of Morningdawn Hall, particularly those requiring divine healing, the Apothecary remains a dependable source of everyday medical supplies and minor treatment. \n\nIts longstanding association with the Selgard family has made it a familiar and trusted establishment among the townsfolk, preserving a tradition of practical care and service to the community.",
       "photo": "",
       "u": 0.5093017112925468,
-      "v": 0.5950279715414216
+      "v": 0.5950279715414216,
+      "number": 20
     },
     {
       "id": "loc1793141060504vvoyhxnvax",
-      "number": 21,
+      "type": "map",
       "title": "Erek's Pit",
       "description": "\nErek's Pit is a large, abandoned crater in Shadowdale, marking the former home and workshop of Erek the Alchemist, a minor wizard known for his experiments with magical potions, alchemical mixtures, and unusual remedies. \n\nErek once operated a modest business from the property, advertising his services with a sign proclaiming him a maker and purveyor of philters, potions, and physic. His work came to a disastrous end when one of his experiments went catastrophically wrong, triggering a tremendous explosion that destroyed his home and scattered its remains across the surrounding countryside. \n\nThe exact cause of the accident was never determined, although several surviving examples of Erek's creations were recovered and eventually entrusted to the legendary archmage Elminster for examination. \n\nThe land originally fell under the ownership of Beregon Hillstar and later became the site of a crude Zhentilar barracks during the Zhentarim occupation of Shadowdale. Following the liberation of the dale, the military structure was abandoned, leaving the ruined property as a reminder of both Erek's ill-fated experiments and the town's troubled history. \n\nToday, the crater remains largely undisturbed, its uneven ground and scattered remnants of stonework serving as a warning about the dangers of reckless magical experimentation.",
       "photo": "",
       "u": 0.5029283692048011,
-      "v": 0.6429379564072554
+      "v": 0.6429379564072554,
+      "number": 21
     },
     {
       "id": "loc1793141278011mn3ocefmhvi",
-      "number": 22,
+      "type": "map",
       "title": "Hillstar Estate",
       "description": "\nThe Hillstar Estate is the ancestral residence of the Hillstar family, one of Shadowdale's longstanding farming households whose history is closely intertwined with the dale's turbulent past. The property once belonged to Beregon Hillstar, a respected farmer and influential member of the community who frequently represented the townsfolk before Lord Mourngrym Amcathra. \n\nBeregon endured considerable personal tragedy, including the death of his wife, Bereet, and the loss of his son, Lhurt, before ultimately perishing during the Zhentarim invasion of 1375 DR. Following his death, the surviving Hillstars fled Shadowdale, and Zhentilar soldiers appropriated the family house and neighboring barn as military barracks. \n\nIn the generations since, the property has returned to the Hillstar family and is currently maintained by Deren Hillstar, a 48-year-old farmer descended from the original Hillstar lineage. Deren lives with his wife, Maela, aged 45, who helps manage the household and farm, and their three children: Orin, aged 18, who assists with agricultural work; Sella, aged 13, who helps maintain the household; and Perrin, aged 8, the youngest of the family. \n\nThe neighboring barn provides storage for harvested crops, farming equipment, and other agricultural supplies, while the surrounding grounds bear the marks of generations of cultivation. The family's history is also connected to the nearby Dwarven Sinkhole, once a quarry on Beregon's land that collapsed following a battle involving adventurers and subterranean invaders. \n\nThough the Hillstars have endured war, displacement, and the loss of much of their ancestral farmland, Hillstar House remains a symbol of the family's perseverance and enduring connection to Shadowdale.",
       "photo": "",
       "u": 0.4541913639379142,
-      "v": 0.6334558206391159
+      "v": 0.6334558206391159,
+      "number": 22
     },
     {
       "id": "loc1793141564409c80pxsrbrxi",
-      "number": 23,
+      "type": "map",
       "title": "Morningdawn Hall",
       "description": "Morningdawn Hall is Shadowdale's principal temple dedicated to Lathander, the Morninglord and god of dawn, renewal, and new beginnings. \n\nThe original temple was a magnificent magical structure constructed in the shape of a great phoenix with outstretched wings, but it was destroyed during the Time of Troubles and later suffered further destruction during the Zhentarim occupation. \n\nThe present temple, rebuilt with funding from adventurers seeking divine healing following expeditions into the Underdark, is a more modest but elegant structure featuring a tall spire rising above an eastward-facing prayer hall, with adjoining buildings providing living quarters for clergy and lay assistants. \n\nThe temple is overseen by Adanar the Open-Handed, a 157-year-old high elf priest and former adventurer known for his commanding presence, wisdom, and dedication to the people of Shadowdale. Adanar is assisted by Barna Morningcraft, aged 46, a scribe responsible for maintaining the temple's records and correspondence; Senna Tethgar, aged 19, a novice devoted to religious service; and Rella Silvermane, aged 18, a lay assistant from Silvermane Farm. \n\nAmong the temple's newer residents is Nina Selvora, aged 20, a recent arrival to Shadowdale who now lives, works, and trains at Morningdawn Hall under Adanar's guidance. As an initiate, Nina assists with the temple's daily responsibilities while studying the teachings of Lathander and developing her abilities under the supervision of the clergy. \n\nUntil recently, the temple's staff also included Elira Moss, aged 27, a junior healer from the Moss family who devoted herself to treating the sick and injured. Elira became the third victim in the series of murders that have shaken Shadowdale, and her death has cast a shadow over the temple and its congregation. \n\nMorningdawn Hall remains the village's primary destination for serious injuries, illnesses, and those requiring divine healing, while also providing religious ceremonies, spiritual guidance, and charitable assistance to those in need. \n\nDespite the grief surrounding Elira's murder and the growing unrest throughout Shadowdale, Adanar and his clergy continue their work, maintaining the temple as a place of compassion, healing, and hope for the community.",
       "photo": "",
       "u": 0.30310651580967035,
-      "v": 0.7167992074436943
+      "v": 0.7167992074436943,
+      "number": 23
     },
     {
       "id": "loc179314180237156m83fs88tm",
-      "number": 24,
+      "type": "map",
       "title": "Elminster's Pool",
       "description": "\nElminster's Pool is a small, spring-fed pool situated in the shadow of the Old Skull, near the ruins of the tower once inhabited by the legendary archmage Elminster Aumar, the Sage of Shadowdale and one of the most powerful wizards in Faerûn. \n\nThe pool has long served as a natural watering hole for sheep grazing, providing a reliable source of fresh water for the livestock tended by local shepherds. Its proximity to Elminster's former residence has made it a familiar landmark among the people of Shadowdale, although there is no known evidence that the waters themselves possess any magical properties. The nearby tower, which Elminster occupied after declaring his retirement from adventuring, was famously destroyed during a confrontation with Sharran assassins, leaving little more than scorched foundations and scattered stones. \n\nDespite the extraordinary history surrounding the site, Elminster's Pool remains a peaceful and largely unremarkable feature of everyday village life, where grazing animals drink from its waters beneath the looming slopes of the Old Skull. For generations, the pool has stood in quiet contrast to the legendary magical events that unfolded nearby, serving as a reminder that even the most extraordinary places in Shadowdale are woven into the ordinary lives of its inhabitants.",
       "photo": "",
       "u": 0.2768634749541656,
-      "v": 0.5850467490626514
+      "v": 0.5850467490626514,
+      "number": 24
     },
     {
       "id": "loc1793141889201kee3eldicyd",
-      "number": 25,
+      "type": "map",
       "title": "Mirrorman's Mill",
       "description": "\nMirrorman's Mill is a historic water-powered grain mill located south of Shadowdale, where the swift-flowing Duckrace meets the River Ashaba, forming the natural lake known as the Millpond.\n\nThe mill was originally constructed during the reign of Lord Aumry at the request of Syluné Silverhand, the Witch of Shadowdale, by the first Mirrorman, a hearty and boisterous miller who established the family's milling tradition. Following his death, the business passed to his son, who secretly served as a spy for Jyordhan and the Zhentarim. When Jyordhan fell from power, the younger Mirrorman disappeared and was rumored to have been killed by the Knights of Myth Drannor. \n\nThe mill subsequently passed into the custody of the Lord of Shadowdale, and for many years Lord Mourngrym Amcathra assigned soldiers to operate it during harvests, providing free milling services to the dale's farmers. \n\nIn the generations since, the mill has returned to the Mirrorman family and is currently operated by Derren Mirrorman, a 48-year-old master miller descended from the original Mirrorman's daughter, preserving the family's legitimate bloodline rather than that of the disgraced Zhentarim agent. Derren is assisted by his wife, Mara, aged 45, who manages the household, grain intake, and business accounts, and their three children: Tavin, aged 22, who operates and maintains the mill's machinery; Elira, aged 19, who manages grain records, customer orders, and deliveries; and Corren, aged 14, who is learning the family trade as an apprentice. \n\nThe mill processes wheat, corn, and other grains harvested throughout the surrounding farmland, supplying flour and meal to Shadowdale's households, bakeries, and local businesses. Its great wooden waterwheel turns steadily with the current of the Duckrace, while weathered millstones from earlier generations remain scattered along the banks of the Millpond. \n\nDespite its troubled history, Mirrorman's Mill has once again become an essential part of Shadowdale's agricultural economy, representing both the restoration of a historic family trade and the enduring importance of the dale's farming community.",
       "photo": "",
       "u": 0.24799611353799844,
-      "v": 0.8176098249671646
+      "v": 0.8176098249671646,
+      "number": 25
     },
     {
       "id": "loc1793142128490zwleh2hdh2f",
-      "number": 26,
+      "type": "map",
       "title": "Syluné's Hut",
       "description": "\nSyluné's Hut is the ruined former residence of Syluné Silverhand, the legendary Witch of Shadowdale, one of the Seven Sisters and wife of the late Lord Aumry Obarskyr. \n\nOnce a modest cottage surrounded by woodland, the dwelling served as both Syluné's home and a place where she offered magical assistance, healing remedies, and wisdom to the people of Shadowdale. \n\nIn 1356 DR, Syluné sacrificed herself defending the dale against an attack by dragons, destroying an ancient red dragon at the cost of her own life. The hut was devastated during the attack, leaving little more than roofless stone walls, crumbling foundations, and scattered remnants of its former structure. \n\nFollowing Syluné's death, ownership of the property passed to Lord Mourngrym Amcathra, who refused numerous requests to reclaim, rebuild, or cultivate the surrounding land, insisting that it would remain untouched until its rightful owner returned. \n\nRumors have long persisted that Syluné's hut once concealed magical portals connecting to distant locations across Toril and even other planes of existence, although no such portals have ever been conclusively discovered. Syluné herself was known to survive beyond death as a spectral guardian of Shadowdale, continuing to watch over the people she had protected in life. \n\nBy the late 1490s DR, the hut remains abandoned and overgrown, its weathered ruins standing as a quiet memorial to one of Shadowdale's greatest defenders. Though generations have passed since its destruction, the site retains an air of mystery, and many locals remain reluctant to disturb the grounds associated with the legendary Witch of Shadowdale.",
       "photo": "",
       "u": 0.38895865296845267,
-      "v": 0.7462438612742095
+      "v": 0.7462438612742095,
+      "number": 26
     },
     {
       "id": "loc1793142239801t1p0vdli5d",
-      "number": 27,
+      "type": "map",
       "title": "Dwarven Sinkhole",
       "description": "\nThe Dwarven Sinkhole is a massive, partially collapsed quarry located on land once belonging to Beregon Hillstar, a prominent farmer and respected member of Shadowdale's community. \n\nOriginally a productive stone quarry, the site supplied much of the stone used in the construction of the village's buildings and fortifications. Beregon employed a family of dwarven miners who lived and worked within the quarry, maintaining a network of excavations and underground passages beneath the surrounding countryside. \n\nThe quarry's history took a tragic turn when an unknown force tunneled upward from the depths and slaughtered the dwarven miners, prompting speculation that the attackers were drow, Zhentarim agents, or members of the Cult of the Dragon. A company of adventurers staying at the Old Skull Inn intervened, confronting the subterranean invaders in a fierce battle involving powerful spells, including fireballs and lightning bolts. The resulting destruction caused the quarry and its adjoining tunnels to collapse, creating an enormous sinkhole that gradually expanded and consumed much of Beregon's farmland. \n\nIn the years that followed, the villagers began using the site as a dumping ground for refuse and excavated earth, including material removed during the construction of Shadowdale's newer temples. \n\nBy the late 1490s DR, the sinkhole remains a prominent scar upon the landscape, its steep, unstable slopes descending into a vast depression filled with rubble, discarded materials, and remnants of the original quarry. \n\nAlthough no further invasions have emerged from its depths, the site remains a place of local unease, and its proximity to the ancient subterranean passages beneath Shadowdale continues to fuel rumors about what might still lie buried below.",
       "photo": "",
       "u": 0.48493315374206397,
-      "v": 0.7133057466789487
+      "v": 0.7133057466789487,
+      "number": 27
     },
     {
       "id": "loc1793142355900w1iw9478px9",
-      "number": 28,
+      "type": "map",
       "title": "Typan House",
       "description": "\nTypan House is the ancestral residence of the Typan family, a respected household whose history in Shadowdale is closely tied to the village's longstanding tradition of woodworking and wagonmaking. \n\nThe family traces its lineage to Typyas, a remarkably talented craftswoman who originally disguised herself as a man to apprentice under Hammerhand Bucko, a renowned but notoriously chauvinistic wagonmaker. Despite the controversy surrounding the discovery of her identity, Typyas earned her master's respect through her exceptional craftsmanship and eventually inherited his trade, establishing the foundation of the family's woodworking legacy. \n\nToday, the house is maintained by Garren Typan, a 50-year-old master wagonmaker who operates the nearby Typan Wagonworks & Woodworking. Garren lives with his wife, Mella, aged 47, who manages the family's finances and business accounts, and their three children: Tyra, aged 22, a skilled journeyman woodworker who works alongside her father; Harl, aged 17, who is learning the family trade as an apprentice; and Jessa, aged 11, the youngest of the household. \n\nThe house itself reflects generations of skilled craftsmanship, featuring finely carved wooden furnishings, decorative trim, and sturdy timber construction maintained by the family over the years. \n\nThough modest compared to the homes of Shadowdale's wealthier residents, Typan House stands as a testament to the family's enduring dedication to craftsmanship, perseverance, and the legacy of the remarkable woman who established their place in the dale's history.",
       "photo": "",
       "u": 0.5715351281564865,
-      "v": 0.6174857769472811
+      "v": 0.6174857769472811,
+      "number": 28
     },
     {
       "id": "loc1793142536516c5px1mr4u85",
-      "number": 29,
+      "type": "map",
       "title": "Bram Selgard House",
       "description": "\nBram Selgard's House is a modest family residence belonging to a younger branch of the Selgard family, one of Shadowdale's longstanding farming households. \n\nThe home is maintained by Bram Selgard, a 25-year-old farmer and livestock handler who is the son of Harl and Tessa Selgard, the proprietors of Selgard Farm. Having established a household separate from his parents, Bram continues to work in the family's agricultural trade, tending livestock and assisting with the daily responsibilities of the farm. \n\nHe lives with his wife, Nella Selgard, aged 24, who manages their household, and their young daughter, Eryn, aged 4. Though Bram and his family maintain their own residence, they remain closely connected to Selgard Farm, where much of their livelihood originates. \n\nThe house is a simple but well-maintained dwelling, reflecting the practical needs of a young farming family establishing its place within the community. As one of the newer households belonging to the extended Selgard family, Bram's home represents the continuation of a family whose generations of agricultural work have helped sustain the people of Shadowdale.",
       "photo": "",
       "u": 0.5704104271900654,
-      "v": 0.6619023376007872
+      "v": 0.6619023376007872,
+      "number": 29
     },
     {
       "id": "loc17931426050500iqhszvkarsf",
-      "number": 30,
+      "type": "map",
       "title": "Mother Tara's Festhall",
       "description": "\nMother Tara's Festhall is one of Shadowdale's oldest establishments of entertainment and hospitality, occupying a spacious two-story building along the western side of the Shadowdale Trail. \n\nOriginally established by Mother Tara, a cheerful halfling woman from the Vilhon Reach, the festhall became renowned for its fine wines, sumptuous banquets, music, dancing, gambling, and other entertainments catering to merchants, adventurers, and travelers passing through the dale. Mother Tara maintained a reputation for operating an honest establishment, supported by her formidable assistant Briig, a man rumored to be a flesh golem concealed beneath an illusion, a story that Tara deliberately encouraged despite its falsehood. \n\nDuring the Zhentarim occupation of Shadowdale, the festhall fell under the control of Zhentilar officers, who transformed the once-respectable establishment into a disreputable brothel frequented by soldiers and gamblers. Following the liberation of Shadowdale, the establishment eventually returned to private ownership and regained much of its former character. \n\nToday, the festhall is operated by Brenna Briig, aged 46, a descendant of Mother Tara's legendary assistant, who has preserved the establishment's historic name and traditions. Brenna is assisted by her husband, Colm Briig, aged 48, who oversees the kitchens and security, and their children: Tara, aged 23, who serves as hostess and manager; Harl, aged 18, who works as a server and entertainer; and Pella, aged 11, the youngest of the family. The establishment also employs Jessa Ulphor, aged 23, a server from Marest Ulphor Farm. \n\nThe festhall offers elaborate meals, comfortable surroundings, live performances, dancing, and games of chance, providing a livelier alternative to the more traditional atmosphere of the Old Skull Inn. Brenna also owns the neighboring property known as Mane's Manor, continuing a longstanding connection established by Mother Tara herself, who once rented the house to adventuring companies and other visiting groups. \n\nDespite its occasionally scandalous history, Mother Tara's Festhall remains a familiar part of Shadowdale's social life, welcoming those seeking an evening of celebration, entertainment, and companionship.",
       "photo": "",
       "u": 0.6026518365884563,
-      "v": 0.6304614100325837
+      "v": 0.6304614100325837,
+      "number": 30
     },
     {
       "id": "loc1793143033752h8revqjg84c",
-      "number": 31,
+      "type": "map",
       "title": "Wayfarer's House",
       "description": "\nWayfarer's House is a spacious, two-story residence located beside Mother Tara's Festhall, serving as a lodging house for adventurers, traveling merchants, and other visitors seeking extended accommodations in Shadowdale. \n\nOriginally known as Mane's Manor, the property was owned by the legendary Mother Tara, who rented the building to adventuring companies and larger traveling parties for extended stays, traditionally charging 15 gold pieces per month. \n\nDuring the Zhentarim occupation of Shadowdale, the house was commandeered by Zhentilar soldiers and used as additional accommodation for the neighboring festhall. Following the liberation of the dale, the property eventually returned to private ownership and was restored to its original purpose as a residence for visiting travelers. \n\nToday, the establishment is known as Wayfarer's House and is owned by Brenna Briig, aged 46, who also operates Mother Tara's Festhall and is descended from Briig, the legendary assistant of the original Mother Tara. Daily operations are overseen by Lorin Selgard, aged 20, a resident caretaker and son of Maerin and Teren Selgard, who manages maintenance, repairs, and the needs of the tenants. Lorin is assisted by Daren Lular, aged 21, a general laborer responsible for gathering supplies, chopping firewood, performing repairs, and helping guests settle into their accommodations. \n\nUnlike the Old Skull Inn or Brannon Boardinghouse, Wayfarer's House primarily caters to individuals and groups intending to remain in Shadowdale for several tendays or longer, offering greater privacy and independence than traditional lodging establishments. Its furnished chambers, communal spaces, and convenient proximity to Mother Tara's Festhall make it particularly attractive to adventuring companies establishing a temporary base of operations. \n\nAlthough its name and ownership have changed over the generations, Wayfarer's House continues the longstanding tradition of hospitality established by Mother Tara, providing a dependable home away from home for travelers passing through Shadowdale.",
       "photo": "",
       "u": 0.6178127687592694,
-      "v": 0.6759033390042021
+      "v": 0.6759033390042021,
+      "number": 31
     },
     {
       "id": "loc17931434806408w8yo7xipt6",
-      "number": 32,
+      "type": "map",
       "title": "Selgard Farm",
       "description": "\nSelgard Farm is a longstanding agricultural property belonging to the Selgard family, one of Shadowdale's established farming households whose generations of labor have helped sustain the village and its surrounding community. \n\nThe farm is operated by Harl Selgard, a 50-year-old farmer who oversees the cultivation of crops, the care of livestock, and the daily responsibilities of the property. Harl lives with his wife, Tessa Selgard, aged 47, who assists with farming operations and manages the household, and their youngest son, Oren, aged 14, who helps with chores and is gradually learning the family trade. Their eldest son, Bram Selgard, aged 25, works as a farmer and livestock handler, continuing to assist his parents despite having established his own household at Bram Selgard's House (#29) with his wife, Nella, and their young daughter, Eryn. Their daughter, Kella Selgard, aged 20, has taken a different path, serving as a lay servant and novice at the House of Plenty, where she studies the teachings of Chauntea and assists the temple's clergy. \n\nThe farm consists of a traditional timber farmhouse, several agricultural outbuildings, livestock enclosures, and cultivated fields producing grain, vegetables, and other essential crops. Like many of Shadowdale's farms, the property relies heavily upon the cooperation of family members, particularly during planting and harvest seasons. \n\nThough the Selgards have established themselves in several trades throughout Shadowdale, including blacksmithing, commerce, and herbal medicine, Selgard Farm remains a reflection of the family's agricultural heritage and its enduring connection to the land.",
       "photo": "",
       "u": 0.6747383222252029,
-      "v": 0.6057798583082816
+      "v": 0.6057798583082816,
+      "number": 32
     },
     {
       "id": "loc1793144434134tc92lgalube",
-      "number": 33,
+      "type": "map",
       "title": "Neldock Elventree Farm",
       "description": "\nNeldock Elventree Farm is one of Shadowdale's longstanding agricultural properties, established by Neldock Elventree, who originally came to the dale from the settlement of Elventree near the forest of Cormanthor. \n\nNeldock and his brother, Ilcurt, cleared land south of Shadowdale and established neighboring farms, earning reputations as honest, straightforward, and courageous men. Following the death of Neldock's wife, much of the farm's management eventually passed to his sons, Meltan and Neld, while his daughter, Imura, pursued a life of adventure as a paladin. \n\nThe property has remained within the Elventree family through successive generations and is currently operated by Meltor Elventree, a 52-year-old farmer descended from Neldock's family. Meltor lives with his wife, Ilyra, aged 49, who assists with farming operations and household management, and their three children: Neld, aged 22, who works alongside his father tending the fields; Sara, aged 17, who assists with agricultural labor; and Calen, aged 12, the youngest of the household. \n\nThe farm consists of a well-maintained farmhouse, barns, livestock enclosures, and cultivated fields that supply grain and vegetables to Shadowdale's residents. The Elventrees have maintained close ties with their relatives at South Elventree Farm, preserving the cooperative spirit established by the two brothers who originally settled the land. \n\nTheir continued presence reflects generations of dedication to agriculture and the enduring legacy of one of Shadowdale's respected farming families.",
       "photo": "",
       "u": 0.8402662287725947,
-      "v": 0.8909142859121147
+      "v": 0.8909142859121147,
+      "number": 33
     },
     {
       "id": "loc1793144494761a8cqvz59qxw",
-      "number": 34,
+      "type": "map",
       "title": "South Elventree Farm",
       "description": "\nSouth Elventree Farm is a family-operated agricultural property located south of Shadowdale, tracing its origins to Ilcurt Elventree, brother of Neldock Elventree and one of the original settlers who cleared farmland in this part of the dale. \n\nIlcurt established the farm alongside his wife, Lasha, a woman from Tethyr, and together they raised three children: Brennan, Demeira, and Illistyl. The family became particularly noteworthy through Illistyl Elventree, who demonstrated an aptitude for arcane magic and received instruction from a traveling wizard connected to the legendary Elminster. Although Illistyl eventually pursued magical studies, the family's agricultural traditions continued through later generations. \n\nToday, the farm is operated by Brennar Elventree, a 48-year-old farmer descended from Ilcurt's family, and his wife, Dessa, aged 45, who assists with the household and farming operations. They live with their three children: Ilren, aged 19, who works alongside his father in the fields; Mera, aged 15, who helps maintain the household and tend the farm; and Tallis, aged 7, the youngest of the family. The property consists of cultivated farmland, a traditional timber farmhouse, agricultural outbuildings, and livestock enclosures. \n\nThe family maintains a close relationship with their relatives at Neldock Elventree Farm, continuing the cooperation between the two branches established generations earlier. South Elventree Farm remains an important contributor to Shadowdale's agricultural community, preserving the legacy of a family whose history encompasses both humble farming traditions and remarkable magical talent.",
       "photo": "",
       "u": 0.9606092321796496,
-      "v": 0.9338336229861458
+      "v": 0.9338336229861458,
+      "number": 34
     },
     {
       "id": "loc1793144542720oiwz0sa43af",
-      "number": 35,
+      "type": "map",
       "title": "South Bestil Farm",
       "description": "\nSouth Bestil Farm is a longstanding agricultural property belonging to the Bestil family, whose history in Shadowdale is closely associated with two notable farmers, Hyne Bestil and his sister-in-law Elma Bestil. \n\nDuring the Second Battle of Shadowdale, Elma's husband, Borsi Bestil, was killed defending the dale, leaving her to manage their farm independently. Despite the hardships she endured, Elma became renowned for her determination and agricultural skill, transforming her property into a successful and profitable enterprise. Hyne, meanwhile, underwent a remarkable change in character following the Time of Troubles, becoming a generous and trusted member of the community after years of being known for his difficult temperament. \n\nThe Bestil family's agricultural holdings have since passed through successive generations, with South Bestil Farm currently operated by Darvin Bestil, a 47-year-old farmer who continues the family's agricultural traditions. Darvin lives with his wife, Sela, aged 44, who assists with the farm and manages the household, and their two children: Boren, aged 18, who works alongside his father tending the fields and livestock, and Miri, aged 14, who helps with household responsibilities and seasonal farmwork. \n\nThe property features a sturdy farmhouse, cultivated fields, livestock pens, and several agricultural outbuildings. The family maintains ties with their relatives at North Bestil Farm, reflecting the extended family's longstanding presence throughout Shadowdale. \n\nSouth Bestil Farm remains a productive and respected part of the local agricultural community, preserving a family legacy defined by resilience, hard work, and perseverance through generations of conflict and change.",
       "photo": "",
       "u": 0.9662327370117548,
-      "v": 0.8140586608215612
+      "v": 0.8140586608215612,
+      "number": 35
     },
     {
       "id": "loc1793144594872lut42b27i7q",
-      "number": 36,
+      "type": "map",
       "title": "Ohane Farm",
       "description": "\nOhane Farm is one of Shadowdale's most respected agricultural properties, tracing its history to Kulnar Ohane, a prominent farmer whose wisdom, intelligence, and quiet determination earned him considerable standing among the dale's inhabitants. \n\nKulnar was regarded as one of the most respected farmers in Shadowdale, second only to Beregon Hillstar, and was known for his practical judgment and ability to recognize trouble before it arrived. He maintained the farm alongside his wife, Lest, and their children, Ruta, Chruce, and Amblas, with assistance from Blaesgard, a formidable warrior who lived and worked as an ordinary farmhand. \n\nThe property has remained in the Ohane family through successive generations and is currently operated by Charren Ohane, a 49-year-old farmer who continues his ancestors' agricultural traditions. Charren lives with his wife, Mella, aged 46, who assists with the farm and manages the household, and their three children: Kulnar Ohane II, aged 22, who works alongside his father; Ruta Ohane II, aged 18, who assists with farming and selling produce at the village market; and Amblas Ohane II, aged 13, who helps with household responsibilities. \n\nThe farm consists of cultivated fields, livestock enclosures, and several well-maintained agricultural buildings. The names of Kulnar, Ruta, and Amblas have been preserved across generations, reflecting the family's pride in its ancestors and their contributions to Shadowdale. \n\nOhane Farm remains a productive and respected part of the community, maintaining the family's reputation for reliability, sound judgment, and dedication to the land.",
       "photo": "",
       "u": 0.8515132384368056,
-      "v": 0.7551693531605308
+      "v": 0.7551693531605308,
+      "number": 36
     },
     {
       "id": "loc1793144643057ztcqiy0i35",
-      "number": 37,
+      "type": "map",
       "title": "Moss Farm",
       "description": "\nMoss Farm is a longstanding family-owned agricultural property situated among the cultivated farmlands surrounding Shadowdale. \n\nThe farm is operated by Garren Moss, a 50-year-old farmer responsible for overseeing crop cultivation, livestock, and the property's daily operations. Garren lives with his wife, Mara, aged 47, who assists with farming and manages the household, and their children: Tavin, aged 24, who works alongside his father as a farmer; Tomas, aged 18, who is employed at the Old Skull Inn handling cleaning, dishwashing, and general maintenance; Nella, aged 16, who assists with the household and farm; and Perrin, aged 10, the youngest of the family. \n\nUntil recently, the household also included Elira Moss, aged 27, who served as a junior healer at Morningdawn Hall, where she devoted herself to caring for Shadowdale's sick and injured. Elira became the third victim in the series of murders that have shaken the village, leaving the Moss family devastated and their once-peaceful household overshadowed by grief. \n\nThe farm itself consists of a traditional timber farmhouse, barns, livestock pens, and cultivated fields that provide grain and other agricultural goods to the community. Although the family continues its daily responsibilities, Elira's death has deeply affected the household, serving as a painful reminder that the violence troubling Shadowdale has reached even its ordinary farming families. \n\nMoss Farm remains an important part of the village's agricultural community, its inhabitants struggling to preserve their livelihood and sense of normalcy amid the growing fear and uncertainty.",
       "photo": "",
       "u": 0.9081231504686399,
-      "v": 0.6728239935675435
+      "v": 0.6728239935675435,
+      "number": 37
     },
     {
       "id": "loc1793144693802kvtmhqdoe4",
-      "number": 38,
+      "type": "map",
       "title": "Zhul Farm",
       "description": "\nZhul Farm is a well-established agricultural property whose history traces back to Hamlin Zhul, a hardworking farmer known for cultivating wheat and maintaining a flourishing vegetable garden. \n\nHamlin originally operated the farm with assistance from a hired laborer named Thurl, while his wife, Blena, helped maintain the household and raise their sons, Casron and Polimar. Through generations of cultivation, the property has remained in the Zhul family, preserving its original emphasis on grain production and vegetable farming. \n\nToday, the farm is operated by Casric Zhul, a 48-year-old farmer descended from Hamlin's family, and his wife, Vanna, aged 45, who assists with agricultural operations and manages the household. They have three children: Pol Zhul, aged 20, who works alongside his father tending the fields; Hessa Zhul, aged 15, who serves on the caretaker staff at the House of the Lady, Shadowdale's temple dedicated to Tymora; and Marik Zhul, aged 10, who helps with chores around the property. \n\nThe farm consists of a well-maintained farmhouse, grain fields, vegetable gardens, livestock enclosures, and agricultural outbuildings. Its produce is sold to local households, merchants, and establishments throughout Shadowdale, continuing the agricultural traditions established by Hamlin generations earlier. \n\nAlthough the Zhuls are not among the dale's wealthiest families, their dependable harvests and longstanding commitment to farming have earned them a respected place within the community.",
       "photo": "",
       "u": 0.7802821040074183,
-      "v": 0.6229178080688569
+      "v": 0.6229178080688569,
+      "number": 38
     },
     {
       "id": "loc1793144749282865w9ue1ccx",
-      "number": 39,
+      "type": "map",
       "title": "Silvermane Farm",
       "description": "\nSilvermane Farm is an ancestral agricultural property belonging to the Silvermane family, one of Shadowdale's most recognizable households due to its longstanding association with the legendary Old Skull Inn. \n\nThe farm originally belonged to Jhaele Silvermane, the formidable proprietor of the inn, who entrusted its management to her eldest son, Durgo Silvermane, while her other children pursued careers as adventurers and merchants throughout Faerûn. The property has remained in the Silvermane family through successive generations, maintaining its agricultural traditions while preserving close connections with the family's celebrated inn. \n\nToday, the farm is operated by Braelen Silvermane, a 51-year-old farmer who oversees the cultivation of crops, livestock, and daily operations. Braelen lives with his wife, Jessa, aged 48, who assists with farming and household management, and their children: Durgo Silvermane II, aged 24, who works alongside his father and continues the family's agricultural tradition; Rella Silvermane, aged 18, who serves as a lay assistant at Morningdawn Hall, where she helps the clergy with their daily responsibilities; and Purn Silvermane, aged 13, who assists with household chores and farmwork. \n\nThe property consists of a traditional farmhouse, barns, cultivated fields, and livestock enclosures, supplying agricultural goods to Shadowdale's markets and local establishments. The family maintains close ties with their relatives who operate the Old Skull Inn, continuing a relationship between farming and hospitality established generations earlier. \n\nSilvermane Farm remains both a productive agricultural enterprise and a reminder of the family's enduring influence upon Shadowdale, preserving the legacy of Jhaele Silvermane and the generations who followed her.",
       "photo": "",
       "u": 0.8151478339664716,
-      "v": 0.5196119032019026
+      "v": 0.5196119032019026,
+      "number": 39
     },
     {
       "id": "loc1793144807196ju3clytqt9s",
-      "number": 40,
+      "type": "map",
       "title": "Fox Ridge",
       "description": "\nFox Ridge is a rugged formation of jagged, rocky hills rising above the surrounding woodlands of Shadowdale, its steep slopes and exposed stone distinguishing it from the gentler countryside nearby. \n\nThe ridge is characterized by sharp outcroppings, narrow ravines, and numerous natural caves scattered throughout its rocky terrain, many of which are partially concealed by thick vegetation and overhanging trees. Dense forest surrounds the base of the hills, gradually thinning as the terrain becomes steeper and more difficult to traverse. \n\nThe area is home to a variety of wildlife, including foxes, deer, wolves, and other woodland creatures, while its caves provide natural shelter for animals seeking refuge from the elements. Although hunters and trappers occasionally venture into the surrounding woods, the more treacherous portions of the ridge are seldom visited by ordinary townsfolk. \n\nThe caves and secluded passages have long encouraged local speculation about hidden chambers, forgotten shelters, and creatures dwelling beneath the hills, though few of these rumors have ever been substantiated. \n\nDespite its imposing appearance, Fox Ridge remains a natural part of Shadowdale's wilderness, standing as a remote and largely untamed landmark beyond the village's cultivated farmlands.",
       "photo": "",
       "u": 0.882629891951736,
-      "v": 0.3174916545491663
+      "v": 0.3174916545491663,
+      "number": 40
     },
     {
       "id": "loc1793144890060xvg6h0wfpdb",
-      "number": 41,
+      "type": "map",
       "title": "Druid's Grove",
       "description": "\n\nDruids' Grove is a secluded sanctuary nestled deep within the forests surrounding Shadowdale, where ancient trees, moss-covered stones, and dense vegetation form a natural refuge largely untouched by civilization. \n\nThe grove is characterized by towering oaks, winding woodland paths, and quiet clearings where sunlight filters through the thick canopy overhead. Long regarded as a place of natural significance, the area is believed to have served as a gathering place for druids and other guardians of the forest for generations, its ancient trees and undisturbed surroundings providing a sanctuary for those devoted to preserving the balance of nature. \n\nWildlife is abundant throughout the region, and travelers occasionally report unusual encounters with animals that seem remarkably unafraid of humanoid visitors. In recent months, however, troubling rumors have begun circulating among the people of Shadowdale concerning an unusual increase in giant spiders inhabiting the surrounding woodlands. \n\nHunters and woodcutters have reported enormous webs stretched between trees, abandoned animal carcasses wrapped in silk, and sightings of unnaturally large spiders moving through the forest. Some claim the creatures have begun venturing farther from their usual territories, while others whisper that something deep within the woods may be driving them toward the outskirts of the dale. \n\nDespite these unsettling reports, Druids' Grove remains a place of remarkable natural beauty and mystery, its secluded location and ancient atmosphere inspiring equal measures of reverence and unease among those who know of its existence.",
       "photo": "",
       "u": 0.9447517244961797,
-      "v": 0.10573024567219554
+      "v": 0.10573024567219554,
+      "number": 41
     },
     {
       "id": "loc1793150736611e9l250s7dgc",
-      "number": 42,
+      "type": "map",
       "title": "Buldar Ulphor Farm",
       "description": "\nBuldar Ulphor Farm is a longstanding agricultural estate belonging to one of Shadowdale's most influential farming families. \n\nThe property traces its origins to Buldar Ulphor, a prominent farmer who managed the land alongside his wife, Neena, and their children, Marest and April. Buldar was particularly well known for his ongoing rivalry with his brother, Ruldor Ulphor, a competing landowner whose disagreements with him became a familiar source of gossip throughout the dale. The rivalry extended beyond farming practices and property boundaries, with the brothers maintaining competing branches of the family whose influence was felt throughout Shadowdale's agricultural community. \n\nToday, the farm is operated by Buldar Ulphor III, a 52-year-old farmer who continues the family's agricultural traditions. He lives with his wife, Rinna, aged 49, who assists with farming operations and manages the household, and their three children: Alden, aged 23, who works alongside his father; Tessa, aged 19, who assists with livestock and crop cultivation; and Joric, aged 10, the youngest of the family. The property consists of a substantial farmhouse, several barns, livestock enclosures, and extensive cultivated fields producing grain and other agricultural goods for Shadowdale. \n\nAlthough generations have passed since the original rivalry between Buldar and Ruldor, the two branches of the Ulphor family remain closely associated with the history of the dale's farming community.\n",
       "photo": "",
       "u": 0.6072313923137383,
-      "v": 0.22077661863965148
+      "v": 0.22077661863965148,
+      "number": 42
     },
     {
       "id": "loc1793150814233d2mudrhm5lm",
-      "number": 43,
+      "type": "map",
       "title": "Storm's Farm",
       "description": "\nStorm's Farm is the secluded woodland estate of Storm Silverhand, the legendary Bard of Shadowdale, one of the Seven Sisters, and a powerful member of the secretive organization known as the Harpers. \n\nFor centuries, Storm has maintained the property as a peaceful refuge from her many adventures and responsibilities throughout Faerûn, although her duties frequently require her to spend extended periods away from Shadowdale. The farm is known for its carefully maintained gardens, cultivated fields, and secluded surroundings, providing Storm with a measure of privacy rarely afforded to someone of her considerable reputation. \n\nIn her absence, the property is managed by Harlun Lular, a 49-year-old farmer and steward descended from Lular, Storm's original overseer and caretaker. Harlun lives on the property with his wife, Mira, aged 46, who oversees the household and kennels, and their children: Teren, aged 21, who assists with farming and training the estate's wolfhounds; Daren, also aged 21, who works at Wayfarer's House in Shadowdale; Sella, aged 17, who helps care for the animals; and Bran, aged 11, the youngest of the family. \n\nThe farm is particularly renowned for its wolfhounds, a tradition established during Storm's earlier years in Shadowdale, when the animals were raised to guard the grounds and discourage unwelcome visitors. \n\nThough Storm herself is currently away, the Lular family continues to maintain her estate, preserving its quiet character and ensuring that the legendary Harper always has a home to return to.",
       "photo": "",
       "u": 0.5949685402847393,
-      "v": 0.14459727933889177
+      "v": 0.14459727933889177,
+      "number": 43
     },
     {
       "id": "loc179315085954322lxjq9y36n",
-      "number": 44,
+      "type": "map",
       "title": "North Bestil Farm",
       "description": "\nNorth Bestil Farm is a longstanding agricultural property belonging to the Bestil family, whose roots in Shadowdale stretch back to the time of Hyne Bestil, a farmer once notorious for his disagreeable temperament and constant complaints. \n\nFollowing the Time of Troubles, Hyne underwent a remarkable change in character, becoming a generous, approachable, and trusted member of the community. His willingness to listen to the troubles of others, coupled with his reputation for keeping private matters confidential, eventually made him one of the dale's most well-liked farmers. \n\nHyne maintained his household alongside his wife, Merna, and their three sons, Britaria, Huld, and Krayan, establishing a family line that continued farming the surrounding countryside. \n\nToday, North Bestil Farm is operated by Huldren Bestil, a 46-year-old farmer descended from Hyne's family. Huldren lives with his wife, Mara, aged 44, who assists with the farm and household, and their three children: Kerr, aged 20, who works alongside his father; Linn, aged 16, who helps with livestock and agricultural responsibilities; and Toma, aged 9, the youngest of the household. \n\nThe property features a traditional farmhouse, well-maintained barns, livestock pens, and cultivated fields producing grain and vegetables for the local community. The family maintains ties with their relatives at South Bestil Farm, continuing the longstanding relationship between the two branches of the Bestil family. \n\nNorth Bestil Farm remains a productive part of Shadowdale's agricultural community, preserving the reputation for hospitality and neighborly assistance established by Hyne generations earlier.",
       "photo": "",
       "u": 0.5923407862785253,
-      "v": 0.054814475408083194
+      "v": 0.054814475408083194,
+      "number": 44
     },
     {
       "id": "loc1793150940371hg6ezwksl27",
-      "number": 45,
+      "type": "map",
       "title": "Standard Farm",
       "description": "\nStandard Farm is an established agricultural property whose history is closely tied to the upheaval caused by the Zhentarim invasions of Shadowdale. \n\nThe land originally belonged to Belomuth, a local farmer who fled with his family as Zhentarim armies advanced upon the dale during the Time of Troubles. Following their departure, the abandoned property was claimed by Silas Standard, a refugee from Archendale who settled in Shadowdale and swore allegiance to Lord Mourngrym Amcathra. Silas became known for his bewilderment at the extraordinary number of powerful adventurers living in the dale and the strange magical occurrences that seemed to accompany them. Alongside his wife, Marga, and their sons, Golta and Drenn, he established a new household and helped restore the farm to productive use. \n\nToday, the property is maintained by Drennar Standard, a 49-year-old farmer descended from Silas, and his wife, Lysa, aged 46, who assists with agricultural operations and manages the household. Their three children are Golt, aged 21, who works alongside his father; Maren, aged 16, who helps tend livestock and crops; and Silas Standard II, aged 8, named in honor of his ancestor. The farm consists of a well-maintained farmhouse, barns, cultivated fields, and livestock enclosures. \n\nAlthough the Standards were originally newcomers to Shadowdale, generations of farming have firmly established their family within the community, transforming what began as a refugee's claim into a lasting agricultural legacy.",
       "photo": "",
       "u": 0.48431092786934654,
-      "v": 0.04976175875404854
+      "v": 0.04976175875404854,
+      "number": 45
     },
     {
       "id": "loc17931510134860dd5wt782q3f",
-      "number": 46,
+      "type": "map",
       "title": "Tower Farm",
       "description": "\nTower Farm is an agricultural estate belonging to the office of the Lord or Lady of Shadowdale, its ownership traditionally tied to the authority exercised from the nearby Twisted Tower of Ashaba. \n\nUnlike the privately owned farms surrounding the village, the property serves as an official holding whose agricultural production helps support the needs of the dale's government, its guards, and the maintenance of the Twisted Tower. The land is currently held under the authority of Lady Mareldraea Hawkguard, aged 54, the ruling Lady of Shadowdale, who retains ownership in her official capacity rather than as a personal family estate. \n\nDaily operations are entrusted to Ulric Ulphor, aged 20, a member of the Ulphor farming family whose relatives operate nearby Ulman Ulphor Farm. Ulric serves as the farm's working foreman under an arrangement with his family, overseeing crop cultivation, livestock care, seasonal labor, and the upkeep of the property. The estate consists of cultivated fields, agricultural outbuildings, livestock enclosures, and storage facilities used to preserve harvested grain and other provisions. While Ulric and his workers manage the ordinary agricultural responsibilities, the farm ultimately remains accountable to the administration of the Twisted Tower. \n\nIts continued operation provides a dependable source of food and supplies for Shadowdale's leadership and guards, reflecting the longstanding relationship between the dale's governing authority and the agricultural community that sustains it.",
       "photo": "",
       "u": 0.477887514931012,
-      "v": 0.09368148060772766
+      "v": 0.09368148060772766,
+      "number": 46
     },
     {
       "id": "loc1793151082844nwe6ktpaes8",
-      "number": 47,
+      "type": "map",
       "title": "Ulman Ulphor Farm",
       "description": "\nUlman Ulphor Farm is a longstanding agricultural property belonging to a branch of the influential Ulphor family, whose history in Shadowdale is marked by generations of farming, competition, and occasional family disputes. \n\nThe property traces its lineage to Ruldor Ulphor, a prominent farmer known for his outspoken personality and fierce rivalry with his brother, Buldar Ulphor. Ruldor maintained his farm alongside his wife, Lana, and their three sons, Ulman, Jalnar, and Bertil, each of whom inherited aspects of the family's strong-willed character. The farm's present name honors Ulman Ulphor, one of Ruldor's sons, whose reputation for ambition and cunning distinguished him among his relatives. \n\nToday, the property is operated by Jalen Ulphor, a 48-year-old farmer descended from this branch of the family. Jalen lives with his wife, Mira, aged 45, who assists with agricultural operations and household management, and their three children: Ulric, aged 20, who serves as the working foreman of the nearby Tower Farm; Sena, aged 15, who helps with farming and household responsibilities; and Derrin, aged 11, the youngest of the family. \n\nThe farm features cultivated fields, livestock enclosures, barns, and a substantial farmhouse maintained through successive generations. The family's arrangement to operate Tower Farm has further strengthened its connections with Shadowdale's governing authority, extending the Ulphors' agricultural influence beyond their own property. \n\nAlthough the old rivalry between Ruldor and Buldar remains part of the family's history, Ulman Ulphor Farm continues to thrive as an established and productive part of Shadowdale's farming community.",
       "photo": "",
       "u": 0.48810658680146696,
-      "v": 0.13332583559016262
+      "v": 0.13332583559016262,
+      "number": 47
     },
     {
       "id": "loc1793151158598a4o1249kf08",
-      "number": 48,
+      "type": "map",
       "title": "Luth Mlennon Farm",
       "description": "\nLuth Mlennon Farm is a longstanding agricultural property whose history is closely associated with Luth Mlennon, one of Shadowdale's most colorful and memorable farmers. \n\nUnlike many of his neighbors, Luth gradually reduced his farming activities as he grew older, allowing much of his land to lie fallow while concentrating on cultivating herbs, cabbages, melons, and potatoes. He became particularly famous for his extraordinary talent for storytelling, frequently visiting the Old Skull Inn to entertain travelers with elaborate tales whose accuracy was often questionable. \n\nOne especially notorious evening of drinking and storytelling ended with Luth awakening in a muddy patch of Elma Bestil's farmland with no recollection of how he had arrived there, earning the location the enduring nickname Luth's Mud. \n\nBeyond farming and storytelling, Luth was also a highly skilled glazier and glassblower, providing glasswork to the people of Shadowdale. \n\nToday, the property is operated by Tavren Mlennon, a 51-year-old farmer descended from Luth, who maintains the family's agricultural traditions alongside his partner, Mira, aged 48. They share the household with their three children: Luth Mlennon II, aged 24, who divides his time between farming and glassworking; Sella, aged 19, who assists with the household and agricultural responsibilities; and Corren, aged 13, the youngest of the family. The property consists of a traditional farmhouse, cultivated vegetable gardens, modest agricultural outbuildings, and a small workshop where the family's glassworking tradition continues. \n\nThough the farm remains productive, the Mlennons are still remembered as much for their ancestor's remarkable stories and unusual adventures as for their agricultural accomplishments, preserving one of Shadowdale's more entertaining family legacies.",
       "photo": "",
       "u": 0.4901503669600111,
-      "v": 0.17374754035538806
+      "v": 0.17374754035538806,
+      "number": 48
     },
     {
       "id": "loc17931512574187zkm10ai7er",
-      "number": 49,
+      "type": "map",
       "title": "Marest Ulphor Farm",
       "description": "\nMarest Ulphor Farm is an established agricultural property belonging to a branch of the influential Ulphor family, whose roots in Shadowdale stretch back generations. \n\nThe property takes its name from Marest Ulphor, son of the prominent farmer Buldar Ulphor and his wife, Neena, who grew up amid the longstanding rivalry between his father and his uncle, Ruldor. As the Ulphor family's holdings expanded through successive generations, Marest established a separate branch of the family, preserving the agricultural traditions and independence for which the Ulphors had become known. \n\nToday, the farm is operated by Corren Ulphor, a 47-year-old farmer descended from Marest's family line, and his wife, Lessa, aged 44, who assists with farming operations and manages the household. They have three children: Jessa, aged 23, who works as a server at Mother Tara's Festhall in Shadowdale; Marest Ulphor II, aged 17, who assists his father with the farm's daily operations and carries the name of his distinguished ancestor; and Halla, aged 12, who helps with household responsibilities. \n\nThe property consists of a well-maintained farmhouse, extensive cultivated fields, livestock enclosures, and several agricultural outbuildings used for storing grain, equipment, and harvested produce. Although the farm operates independently, the family maintains connections with their relatives at Buldar Ulphor Farm and Ulman Ulphor Farm, reflecting the extended family's considerable presence throughout the surrounding countryside. \n\nMarest Ulphor Farm remains a productive part of Shadowdale's agricultural economy, continuing a tradition of farming that has endured through generations of family rivalry, political upheaval, and changing fortunes.",
       "photo": "",
       "u": 0.4840189837149452,
-      "v": 0.22466333908655217
+      "v": 0.22466333908655217,
+      "number": 49
     },
     {
       "id": "loc1793151330280vbewkn2v70n",
-      "number": 50,
+      "type": "map",
       "title": "Helmark Hillstar Farm",
       "description": "\nHelmark Hillstar Farm is a longstanding agricultural property belonging to a branch of the influential Hillstar family, whose history is deeply intertwined with Shadowdale's political and agricultural development. \n\nThe farm takes its name from Helmark Hillstar, son of Urnan Hillstar and his wife, Adlma, and nephew of the prominent farmer Beregon Hillstar. During the family's earlier years, Urnan was recognized as an influential landowner and a defender of Shadowdale, while Helmark developed a reputation for being considerably less dependable than his father. \n\nHistorical accounts describe the younger Helmark as a troublesome and occasionally dishonest individual whose behavior frequently raised concerns among his neighbors and relatives. Despite his questionable reputation, the property bearing his name remained within the Hillstar family, passing through successive generations and continuing the agricultural traditions established by his ancestors. \n\nToday, the farm is operated by Rulmar Hillstar, a 50-year-old farmer who oversees the cultivation of crops, livestock care, and general management of the estate. Rulmar lives with his wife, Tana, aged 47, who assists with farming operations and household responsibilities, and their two children: Helmar, aged 21, who works alongside his father as a farmer, and Bryn, aged 16, who divides her time between farmwork and serving as a seasonal temple assistant at the House of Plenty, Shadowdale's temple dedicated to Chauntea. \n\nThe property consists of a traditional farmhouse, barns, livestock enclosures, and extensive cultivated fields that provide grain and other agricultural goods to the surrounding community. \n\nAlthough the original Helmark's reputation remains a curious part of the family's history, his descendants have maintained the property as a productive and respected farming establishment, preserving the Hillstar family's enduring connection to Shadowdale.",
       "photo": "",
       "u": 0.47058822676003975,
-      "v": 0.27246973868655433
+      "v": 0.27246973868655433,
+      "number": 50
     },
     {
       "id": "loc17931514461025xchyms3dx5",
-      "number": 51,
+      "type": "map",
       "title": "Shadow Ridge",
       "description": "\nShadow Ridge is a rugged expanse of towering, rocky hills rising above the dense forests northwest of Shadowdale, forming one of the region's most imposing natural landmarks. \n\nThe ridge is characterized by steep slopes, jagged rock formations, narrow ravines, and numerous caves scattered throughout its elevated terrain. Thick woodland covers much of the lower slopes, gradually giving way to exposed stone, windswept clearings, and precipitous cliffs as the elevation increases. \n\nThe area is home to a variety of wildlife, including wolves, bears, mountain lions, and other creatures accustomed to the remote wilderness. Many of the caves extend deep into the hills, forming networks of natural tunnels and chambers whose full extent remains largely unexplored. Hunters, trappers, and occasional travelers venture into the surrounding forests, but the ridge's difficult terrain and isolated location discourage most ordinary townsfolk from exploring its more remote reaches. \n\nIn recent years, rumors have circulated that bandits and other outlaws may be using the caves as hidden encampments, taking advantage of the ridge's natural defenses, concealed entrances, and commanding views of the surrounding countryside. Merchants traveling through the region have occasionally reported suspicious figures watching from the distant hills, while hunters claim to have discovered abandoned campfires, discarded supplies, and signs of habitation near several cave entrances. \n\nAlthough no organized bandit presence has been conclusively confirmed, the possibility has made travelers increasingly wary of the area. \n\nDespite its proximity to Shadowdale, Shadow Ridge remains a largely untamed stretch of wilderness, its imposing heights and hidden caverns offering both natural beauty and considerable danger to those who venture beyond the familiar paths of the dale.",
       "photo": "",
       "u": 0.15146208708222955,
-      "v": 0.12516374827201776
+      "v": 0.12516374827201776,
+      "number": 51
+    },
+    {
+      "id": "loc17931543285726es5x2n8s8x",
+      "type": "murder",
+      "title": "Victim #4: Durran Ohane",
+      "description": "\nLocation: Road near the Dwarven Sinkhole.\n\nWound: Single arrow to the upper shoulder, just above the armpit.\n\nBlood Loss: Minimal; no significant bleeding.\n\nCause of Death: Unknown; wound not ordinarily fatal.\n\nTime to Death: Within minutes of being struck.\n\nSymptoms: Extreme pain, rapid deterioration, unable to cry out.\n\nWeapon: Elven-made arrow with magical properties.\n\nWitness: Saelith Thornvale, who removed the arrow before Darran died.\n\nEvidence: No poison detected; arrow recovered by Saelith.",
+      "photo": "",
+      "u": 0.5118949168464229,
+      "v": 0.6724810879219891
+    },
+    {
+      "id": "loc1793154673440wubjcmvyzy",
+      "type": "session",
+      "title": "10/6/2026",
+      "description": "\nNina and Luciella went to the Moss farm for evidence. Talked to Garren Moss who was Elira's Father. Unwilling to let them exhume her body. Let them into Elira's room. \n\nFound nothing of note, just low level spell books that Nina already knew and had seen before from Morningdawn Hall.\n\nNo useful evidence collected about the murders.",
+      "photo": "",
+      "u": 0.8768132328738395,
+      "v": 0.6979291152505132
+    },
+    {
+      "id": "loc1793154835191vgy1ry67pz",
+      "type": "murder",
+      "title": "Victim #3: Elira Moss",
+      "description": "\nLocation: Outside, slightly south of Wayfarer's House.\n\nWound: Single arrow to the right thigh.\n\nBlood Loss: Minimal; no significant bleeding.\n\nCause of Death: Unknown; wound not ordinarily fatal.\n\nTime to Death: Unknown; found dead shortly after the attack.\n\nSymptoms: Unknown; no witnesses.\n\nWeapon: Elven-made arrow with magical properties.\n\nWitnesses: None.\n\nEvidence: Arrow recovered; no signs of a conventionally fatal injury.",
+      "photo": "",
+      "u": 0.658032253316791,
+      "v": 0.6871844064071304
+    },
+    {
+      "id": "loc1793155098599m4g9ywe54r",
+      "type": "murder",
+      "title": "Victim #1: Elric Mirrorman",
+      "description": "\nLocation: Field south of Syluné's Hut.\n\nFamily: Twin brother of Elira Mirrorman.\n\nWound: Single arrow to the back, near the spine.\n\nBlood Loss: Minimal; no significant bleeding.\n\nCause of Death: Unknown; wound not ordinarily fatal.\n\nTime to Death: Unknown; found dead sometime after the attack.\n\nSymptoms: Unknown; no witnesses.\n\nWeapon: Elven-made arrow with magical properties.\n\nWitnesses: None.\n\nEvidence: Arrow recovered; no signs of a conventionally fatal injury.",
+      "photo": "",
+      "u": 0.4129124715298739,
+      "v": 0.8217762230019782
+    },
+    {
+      "id": "loc1793155283812277oplhb5phj",
+      "type": "murder",
+      "title": "Victim #2: Tavian Mlennon",
+      "description": "Location: North of House of Plenty\n\nWound: Single arrow to the chest.\n\nBlood Loss: Minimal; no significant bleeding.\n\nCause of Death: Unknown.\n\nTime to Death: Already dead when Kerr Bestil reached him.\n\nSymptoms: Unknown.\n\nWeapon: Elven-made arrow with magical properties.\n\nWitness: Kerr Bestil saw the shadow of an unidentified individual but could not distinguish any features.\n\nEvidence: Arrow recovered; no signs of significant blood loss.",
+      "photo": "",
+      "u": 0.6066293509276178,
+      "v": 0.39424940530209196
+    },
+    {
+      "id": "loc1793155319921l9mw42fwtwi",
+      "type": "session",
+      "title": "10/6/2026",
+      "description": "\nParty saw Ruins of Elminster's Tower and immediately wanted to explore it. Lady Ilsheen, watchghost who guards the subterranean chambers beneath the ruins of Elminster's Tower. \n\nShe warns the party politely that to go further will result in death. \n\nParty goes forward down a large tunnel, find no traps, goes through a door, and is attacked by two Iron Golems with no escape. \n\nBefore death, a trap springs where it teleports everybody back to the entrace with Lady Ilsheen. Everybody is recovered with 5 hp.",
+      "photo": "",
+      "u": 0.3304978549852899,
+      "v": 0.5118757875059597
     }
   ]
 }
