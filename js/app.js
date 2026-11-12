@@ -1039,3 +1039,237 @@ render();
 requestAnimationFrame(fitMap);
 
 loadLocations();
+
+
+// MOBILE MAP GESTURES
+// Adds pinch-to-zoom and one-finger panning.
+// Existing mouse controls and DM editing remain unchanged.
+
+(() => {
+  const fingers = new Map();
+  let gesture = null;
+  let moved = false;
+  let pinched = false;
+
+  function mapPoint(event) {
+    const bounds = stage.getBoundingClientRect();
+
+    return {
+      x: event.clientX - bounds.left,
+      y: event.clientY - bounds.top
+    };
+  }
+
+  function beginPan() {
+    const [id, point] = fingers.entries().next().value;
+
+    gesture = {
+      mode: "pan",
+      id,
+      startX: point.x,
+      startY: point.y,
+      originX: x,
+      originY: y
+    };
+  }
+
+  function beginPinch() {
+    const [a, b] = [...fingers.values()];
+
+    const centerX = (a.x + b.x) / 2;
+    const centerY = (a.y + b.y) / 2;
+
+    gesture = {
+      mode: "pinch",
+
+      startDistance: Math.max(
+        1,
+        Math.hypot(b.x - a.x, b.y - a.y)
+      ),
+
+      startScale: scale,
+
+      anchorX: (centerX - x) / scale,
+      anchorY: (centerY - y) / scale
+    };
+
+    moved = true;
+    pinched = true;
+  }
+
+  // Handle touchscreen input separately from mouse controls.
+
+  stage.addEventListener("pointerdown", (event) => {
+    if (event.pointerType !== "touch") return;
+
+    // Ignore buttons, panels, and clickable map markers.
+    if (
+      event.target.closest(
+        "button,input,textarea,select,.panel,.controls,.bottom"
+      )
+    ) {
+      return;
+    }
+
+    event.stopImmediatePropagation();
+
+    fingers.set(event.pointerId, mapPoint(event));
+
+    if (fingers.size === 1) {
+      moved = false;
+      pinched = false;
+      beginPan();
+
+    } else if (fingers.size === 2) {
+      beginPinch();
+
+    } else {
+      gesture = null;
+      moved = true;
+    }
+
+    try {
+      stage.setPointerCapture(event.pointerId);
+    } catch (_) {
+      // The touch may already have been released.
+    }
+
+  }, true);
+
+  // Detect finger movement.
+
+  stage.addEventListener("pointermove", (event) => {
+    if (!fingers.has(event.pointerId)) return;
+
+    event.stopImmediatePropagation();
+
+    fingers.set(event.pointerId, mapPoint(event));
+
+    // TWO FINGERS: PINCH TO ZOOM
+
+    if (
+      fingers.size === 2 &&
+      gesture?.mode === "pinch"
+    ) {
+      const [a, b] = [...fingers.values()];
+
+      const centerX = (a.x + b.x) / 2;
+      const centerY = (a.y + b.y) / 2;
+
+      const distance = Math.hypot(
+        b.x - a.x,
+        b.y - a.y
+      );
+
+      scale = Math.max(
+        0.16,
+        Math.min(
+          10,
+          gesture.startScale *
+            (distance / gesture.startDistance)
+        )
+      );
+
+      // Keep the map centered under your fingers.
+      x = centerX - gesture.anchorX * scale;
+      y = centerY - gesture.anchorY * scale;
+
+      transform();
+    }
+
+    // ONE FINGER: PAN AROUND THE MAP
+
+    else if (
+      fingers.size === 1 &&
+      gesture?.mode === "pan"
+    ) {
+      const point = fingers.get(gesture.id);
+      if (!point) return;
+
+      const dx = point.x - gesture.startX;
+      const dy = point.y - gesture.startY;
+
+      if (Math.abs(dx) + Math.abs(dy) > 6) {
+        moved = true;
+      }
+
+      if (moved) {
+        x = gesture.originX + dx;
+        y = gesture.originY + dy;
+
+        transform();
+      }
+    }
+
+  }, true);
+
+  // Handle fingers lifting from the screen.
+
+  function finishTouch(event, cancelled) {
+    if (!fingers.has(event.pointerId)) return;
+
+    event.stopImmediatePropagation();
+
+    const point = mapPoint(event);
+
+    const wasTap =
+      !cancelled &&
+      fingers.size === 1 &&
+      gesture?.mode === "pan" &&
+      !moved &&
+      !pinched;
+
+    fingers.delete(event.pointerId);
+
+    // Preserve tap-to-place in the local DM editor.
+    if (wasTap && placing && IS_EDITOR) {
+      const u =
+        (point.x - x) / scale / MAP_WIDTH;
+
+      const v =
+        (point.y - y) / scale / MAP_HEIGHT;
+
+      if (
+        u >= 0 &&
+        u <= 1 &&
+        v >= 0 &&
+        v <= 1
+      ) {
+        placingSpot = { u, v };
+        placing = false;
+
+        $("addBtn").textContent = "+ Add location";
+
+        $("hint").textContent =
+          "Local DM editor · Add a location, then click the map to position its marker.";
+
+        editLocation(null);
+      }
+    }
+
+    // Smoothly transition from two fingers to one.
+    if (fingers.size === 2) {
+      beginPinch();
+
+    } else if (fingers.size === 1) {
+      beginPan();
+      moved = true;
+
+    } else {
+      gesture = null;
+    }
+  }
+
+  stage.addEventListener(
+    "pointerup",
+    (event) => finishTouch(event, false),
+    true
+  );
+
+  stage.addEventListener(
+    "pointercancel",
+    (event) => finishTouch(event, true),
+    true
+  );
+
+})();
